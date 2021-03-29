@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-03-29T13:17:56.864Z" agent="5.0 (Windows)" etag="wc9Dk01o82h5mQ-y8q2j" version="14.5.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-29T13:40:54.494Z" agent="5.0 (Windows)" etag="DI3GSG3HSdtIDFlBjPT5" version="14.5.3" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
-    <mxGraphModel dx="483" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1000" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -109,7 +109,7 @@
         <mxCell id="F2aWLSE53vhr_MozMiDo-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="F2aWLSE53vhr_MozMiDo-34">
           <mxGeometry y="136" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-38" value="+ Time()&#xa;+ getTime(): string&#xa;+&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="F2aWLSE53vhr_MozMiDo-34">
+        <mxCell id="F2aWLSE53vhr_MozMiDo-38" value="+ Time()&#xa;+ getTime(): string&#xa;+ getHour(): int&#xa;+ getMinute(): int&#xa;+ getSecond(): int&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="F2aWLSE53vhr_MozMiDo-34">
           <mxGeometry y="144" width="230" height="124" as="geometry" />
         </mxCell>
       </root>
