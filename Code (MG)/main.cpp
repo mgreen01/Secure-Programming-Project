@@ -8,7 +8,7 @@ using namespace std;
             string student_course;
             string student_username;
 
-        protected:
+        private:
             string student_password;
     };
 int main()
