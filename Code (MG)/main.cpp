@@ -37,10 +37,10 @@ int main()
 
     public:
         // Password setter 
-        void setPassword (){
-            student_password = setter_stu_setter;
+        void setPassword (string set_stu_pass) {
+            student_password = set_stu_pass;
         }
-        string getPassword(){
+        string getPassword() {
             return student_password;
         }
 
