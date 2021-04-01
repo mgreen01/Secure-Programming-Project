@@ -38,7 +38,7 @@ int main()
     public:
     // Password setter 
     void setPassword (){
-        student_set_password = student_password;
+        student_password = _setter_stu_setter;
     }
 
     cout >> student_set_password;
