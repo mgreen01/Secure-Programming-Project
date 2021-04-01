@@ -34,4 +34,10 @@ int main()
     student3.student_course = "Computer Science";
     student3.student_username = "Log1";
     student3.student_password = "84hntbobtongnfgmf:@:}:_RE)_R)";
+
+    public:
+    // Password setter 
+    void setPassword (){
+        student_set_password = student_password;
+    }
 };
