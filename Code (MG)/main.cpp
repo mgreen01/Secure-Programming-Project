@@ -36,10 +36,14 @@ int main()
     student3.student_password = "84hntbobtongnfgmf:@:}:_RE)_R)";
 
     public:
-    // Password setter 
-    void setPassword (){
-        student_password = _setter_stu_setter;
-    }
+        // Password setter 
+        void setPassword (){
+            student_password = setter_stu_setter;
+        }
+        string getPassword(){
+            return student_password;
+        }
+
 
     cout >> student_set_password;
 };
