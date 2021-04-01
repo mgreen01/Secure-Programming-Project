@@ -40,4 +40,6 @@ int main()
     void setPassword (){
         student_set_password = student_password;
     }
+
+    cout >> student_set_password;
 };
