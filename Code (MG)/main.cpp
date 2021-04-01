@@ -10,6 +10,15 @@ using namespace std;
 
         private:
             string student_password;
+    public:
+        // Password setter 
+        void setPassword (string set_stu_pass) {
+            student_password = set_stu_pass;
+        }
+        string getPassword() {
+            return student_password;
+        }
+
     };
 int main()
 {
@@ -35,15 +44,5 @@ int main()
     student3.student_username = "Log1";
     student3.student_password = "84hntbobtongnfgmf:@:}:_RE)_R)";
 
-    public:
-        // Password setter 
-        void setPassword (string set_stu_pass) {
-            student_password = set_stu_pass;
-        }
-        string getPassword() {
-            return student_password;
-        }
 
-
-    cout >> student_set_password;
 };
