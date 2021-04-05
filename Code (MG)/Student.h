@@ -1,3 +1,4 @@
+#include <string>
 #ifndef STUDENT_H
 #define STUDENT_H
 
@@ -10,5 +11,5 @@ class Student {
         std::string student_username;
         std::string student_password;
     
-}
+};
 #endif
