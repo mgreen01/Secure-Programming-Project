@@ -8,8 +8,15 @@
 
 
 Student::Student(){
-
-
+        std::cout << "Please enter the student's username: ";
+        std::cin >> student_username;
+        std::cout << "Please enter the student's name: ";
+        std::cin >> student_name;
+        std::cout << "Please enter the student's password: ";
+        std::cin >> student_password;
+        std::cout << "Please enter the student's course: ";
+        std::cin >> student_course;
+        student_ID = rand() % 100;
 
 }
 
