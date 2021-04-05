@@ -17,12 +17,7 @@ class Student {
         int student_ID;
         std::string student_name;
         std::string student_course;
-        void setPassword(std::string stu_pass){
-            student_password = stu_pass;
-        }
-        std::string getPassword () {
-            return student_password;
-        }
-
+        std::string getPassword(); 
+        void setPassword(std::string stu_pass);
 };
 #endif
