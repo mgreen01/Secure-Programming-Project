@@ -4,10 +4,9 @@
 // Date modified: 05/04/2021
 // Title: Student Class Header
 // Description: creates the Student Class
-#include <string>
+#include <iostream>
 #ifndef STUDENT_H
 #define STUDENT_H
-
 class Student {
     private:
         std::string student_username;
@@ -23,4 +22,4 @@ class Student {
         void setUsername(std::string stu_username);
 
 };
-#endif
+#endif 
