@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-06T19:08:20.785Z" agent="5.0 (Windows)" etag="oRlerZfiIJ5jVNB2_5A7" version="14.5.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-06T19:11:23.786Z" agent="5.0 (Windows)" etag="HBHSh7zltrCjEIhclD94" version="14.5.8" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
     <mxGraphModel dx="1662" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -125,21 +125,18 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Fk85s3XBoEgGGTR6DrIB-3" value="Main" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="510" y="820" width="230" height="260" as="geometry" />
+          <mxGeometry x="730" y="790" width="230" height="136" as="geometry" />
         </mxCell>
         <mxCell id="Fk85s3XBoEgGGTR6DrIB-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Fk85s3XBoEgGGTR6DrIB-3">
           <mxGeometry y="26" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="Fk85s3XBoEgGGTR6DrIB-5" value="plain_password: string&#xa;encrypted_password: string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fk85s3XBoEgGGTR6DrIB-3">
+        <mxCell id="Fk85s3XBoEgGGTR6DrIB-5" value="-username: string&#xa;-password: string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fk85s3XBoEgGGTR6DrIB-3">
           <mxGeometry y="34" width="230" height="102" as="geometry" />
         </mxCell>
-        <mxCell id="Fk85s3XBoEgGGTR6DrIB-6" value="+getPassword(): string&#xa;+setCryptoPass: string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fk85s3XBoEgGGTR6DrIB-3">
-          <mxGeometry y="136" width="230" height="124" as="geometry" />
-        </mxCell>
-        <mxCell id="Fk85s3XBoEgGGTR6DrIB-7" value="" style="endArrow=none;html=1;exitX=0.009;exitY=-0.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.004;entryY=-0.024;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="Fk85s3XBoEgGGTR6DrIB-3" source="Fk85s3XBoEgGGTR6DrIB-6" target="Fk85s3XBoEgGGTR6DrIB-6">
+        <mxCell id="Fk85s3XBoEgGGTR6DrIB-7" value="" style="endArrow=none;html=1;exitX=0.009;exitY=-0.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.004;entryY=-0.024;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="Fk85s3XBoEgGGTR6DrIB-3">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="190" y="-50" as="sourcePoint" />
-            <mxPoint x="320" y="120" as="targetPoint" />
+            <mxPoint x="2.0700000000001637" y="135.00800000000004" as="sourcePoint" />
+            <mxPoint x="230.92000000000007" y="133.0239999999999" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
