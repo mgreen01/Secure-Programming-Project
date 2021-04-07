@@ -45,7 +45,10 @@ class Crypto {
 int main () {
     Student Teststu1;
     Teststu1.student_ID = 1;
-    Teststu1.student_name = "Morgan Green";
+    Teststu1.student_name = "Joseph James";
     Teststu1.student_course = "Computer Security";
+    Teststu1.student_username = "23032394";
+    Teststu1.student_password = "?";
+
 
 };
