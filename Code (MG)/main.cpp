@@ -7,11 +7,19 @@ class Student {
     string student_course;
     string student_username;
     string student_password; 
-}
+};
 
 class Lecturer {
     int lecturer_ID;
     string lecturer_name;
     string lecturer_modules;
-    string 
-}
+    string lecturer_username;
+    string lecturer_password;
+};
+
+class User {
+    string username;
+    int age;
+    string account_type;
+    string password;
+};
