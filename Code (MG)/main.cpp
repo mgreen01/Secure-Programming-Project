@@ -16,6 +16,7 @@ class Lecturer {
         int lecturer_ID;
         string lecturer_name;
         string lecturer_modules;
+        void moduleAnnouncement();
     private:
         string lecturer_username;
         string lecturer_password;
@@ -28,8 +29,16 @@ class User {
     string password;
 };
 
+class Admin {
+    string admin_username;
+    string admin_password;
+    void systemAnnouncement();
+};
+
+
+
 
 
 int main () {
-    cout << "Hello world";
-}
+    Student.studentid
+};
