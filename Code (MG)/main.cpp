@@ -35,10 +35,17 @@ class Admin {
     void systemAnnouncement();
 };
 
-
+class Crypto {
+    string plain_password;
+    string encrypted_password;
+};
 
 
 
 int main () {
-    Student.studentid
+    Student Teststu1;
+    Teststu1.student_ID = 1;
+    Teststu1.student_name = "Morgan Green";
+    Teststu1.student_course = "Computer Security";
+
 };
