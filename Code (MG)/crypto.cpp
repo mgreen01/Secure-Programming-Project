@@ -9,11 +9,15 @@ class Crypto {
 };
 
 class User {
+    public:
     string username;
     int age;
     string password;
 };
 
 int main () {
-    cout << 
+    cout << "Please enter a new username: " << endl;
+    User new_user;
+    cin >> new_user.username;
+    return 0;
 };
