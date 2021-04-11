@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+int length = 0;
 
 class Crypto {
     string plain_password;
@@ -25,5 +26,11 @@ int main () {
     cout << "Please enter a new password: " << endl;
     cin >> new_user.password;
 
+    for (int i= 0; new_user.password[i] !='\0'; i++) {
+        length++;
+    }
+    
+    cout << length << endl;
     return 0;
+    
 };
