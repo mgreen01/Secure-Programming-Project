@@ -75,6 +75,14 @@ int main () {
    if (curr_time.sec <= 9) {
       curr_time.clock_sec = '0' + curr_time.clock_sec;
    }
+
+   if (curr_time.clock_month <= 9) {
+       curr_time.clock_month = '0' + curr_time.clock_month;
+   }
+
+   if (curr_time.clock_day <= 9) {
+       curr_time.clock_day = '0' + curr_time.clock_day;
+   }
     return 0;
     
 };
