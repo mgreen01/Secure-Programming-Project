@@ -49,6 +49,4 @@ int main () {
     Teststu1.student_course = "Computer Security";
     Teststu1.student_username = "23032394";
     Teststu1.student_password = "?";
-
-
 };

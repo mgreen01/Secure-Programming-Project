@@ -1,15 +1,23 @@
 //This is a blank file
 #include <iostream>
 #include <ctime>
-
+#include <string.h>
+#include <fstream>
 using namespace std;
 
 int length = 0;
 
 class Crypto {
     private:
-    string plain_password;
-    string encrypted_password;
+        string plain_password;
+        string encrypted_password;
+    public:
+        void setPassword(string p){
+            plain_password = p;
+        }
+        string getPassword() {
+            return plain_password;
+        }
 };
 
 class Time {
@@ -33,7 +41,6 @@ class Time {
    string clock_year;
    string clock_day;
 };
-
 
 class User {
     public:
@@ -63,6 +70,9 @@ int main () {
     curr_time.clock_hour = to_string(curr_time.hour);
     curr_time.clock_min = to_string(curr_time.min);
     curr_time.clock_sec = to_string(curr_time.sec);
+    curr_time.clock_month = to_string(curr_time.month);
+    curr_time.clock_year = to_string(curr_time.year);
+    curr_time.clock_day = to_string (curr_time.day);
 
    if (curr_time.hour <= 9) {
       curr_time.clock_hour = '0' + curr_time.clock_hour;
@@ -76,13 +86,17 @@ int main () {
       curr_time.clock_sec = '0' + curr_time.clock_sec;
    }
 
-   if (curr_time.clock_month <= 9) {
+   if (curr_time.month <= 9) {
        curr_time.clock_month = '0' + curr_time.clock_month;
    }
 
-   if (curr_time.clock_day <= 9) {
+   if (curr_time.day <= 9) {
        curr_time.clock_day = '0' + curr_time.clock_day;
    }
+
+    Crypto new_password;
+
+
     return 0;
     
 };
