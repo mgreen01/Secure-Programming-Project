@@ -1,5 +1,7 @@
 //This is a blank file
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
 int length = 0;
@@ -8,6 +10,22 @@ class Crypto {
     string plain_password;
     string encrypted_password;
 };
+
+class Time {
+   public:
+   time_t now = time(0);
+
+   tm *ltm = localtime(&now);
+   
+   int hour = ltm->tm_hour;
+   int min = ltm->tm_min;
+   int sec = ltm->tm_sec;
+   
+   string clock_hour;
+   string clock_min;
+   string clock_sec;
+};
+
 
 class User {
     public:
@@ -31,6 +49,26 @@ int main () {
     }
     
     cout << length << endl;
+
+    Time curr_time;
+
+    curr_time.clock_hour = to_string(curr_time.hour);
+    curr_time.clock_min = to_string(curr_time.min);
+    curr_time.clock_sec = to_string(curr_time.sec);
+
+   if (curr_time.hour <= 9) {
+      curr_time.clock_hour = '0' + curr_time.clock_hour;
+   }
+
+   if (curr_time.min <= 9) {
+      curr_time.clock_min = '0' + curr_time.clock_min;
+   }
+
+   if (curr_time.sec <= 9) {
+      curr_time.clock_sec = '0' + curr_time.clock_sec;
+   }
+
+    
     return 0;
     
 };
