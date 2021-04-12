@@ -63,6 +63,7 @@ int main () {
         length++;
     }
     
+    
     cout << length << endl;
 
     Time curr_time;
@@ -95,8 +96,8 @@ int main () {
    }
 
     Crypto new_password;
-
-
+    new_password.setPassword(new_user.password);
+    
     return 0;
     
 };
