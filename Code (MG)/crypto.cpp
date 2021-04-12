@@ -7,6 +7,7 @@ using namespace std;
 int length = 0;
 
 class Crypto {
+    private:
     string plain_password;
     string encrypted_password;
 };
@@ -20,10 +21,17 @@ class Time {
    int hour = ltm->tm_hour;
    int min = ltm->tm_min;
    int sec = ltm->tm_sec;
+   int year = 1900 + ltm-> tm_year;
+   int month = 1 + ltm->tm_mon;
+   int day = ltm->tm_mday;
+   
    
    string clock_hour;
    string clock_min;
    string clock_sec;
+   string clock_month;
+   string clock_year;
+   string clock_day;
 };
 
 
@@ -67,8 +75,6 @@ int main () {
    if (curr_time.sec <= 9) {
       curr_time.clock_sec = '0' + curr_time.clock_sec;
    }
-
-    
     return 0;
     
 };

@@ -21,6 +21,7 @@ int main () {
    string clock_sec;
    string clock_month;
    string clock_year;
+   string clock_day;
 
    clock_hour = to_string(hour);
    clock_min = to_string(min);
@@ -46,12 +47,14 @@ int main () {
       clock_month = '0' + clock_month;
    }
 
-
+   if (day <= 9) {
+      clock_day = '0' + clock_day;
+   } 
 
    // print various components of tm structure.
-   cout << "Year:" << 1900 + ltm->tm_year<<endl;
+   cout << "Year:" << clock_year <<endl;
    cout << "Month: "<< clock_month << endl;
-   cout << "Day: "<<  ltm->tm_mday << endl;
+   cout << "Day: "<<  clock_day << endl;
    cout << clock_hour << ":";
    cout << clock_min << ":";
    cout << clock_sec << endl;
