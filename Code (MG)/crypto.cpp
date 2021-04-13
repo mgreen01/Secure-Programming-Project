@@ -3,6 +3,7 @@
 #include <ctime>
 #include <string.h>
 #include <fstream>
+#include <cctype>
 using namespace std;
 
 int length = 0;
@@ -110,6 +111,9 @@ int main () {
 
     Crypto new_password;
     new_password.setPlainPassword(new_user.password);
-    new_password.setEncrypt1(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.password);    
+    for (int i= 0; new_password.getPlainPassword )
+    new_password.setEncrypt1(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.password);
+    cout << new_password.getEncrypt1() << endl;
+        
     return 0; 
 };
