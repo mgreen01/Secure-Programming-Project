@@ -11,15 +11,28 @@ class Crypto {
     private:
         string plain_password;
         string encrypted_password;
+        string encrypt1;
     public:
-        void setPassword(string p){
+        void setPlainPassword(string p){
             plain_password = p;
         }
-        string getPassword() {
+        string getPlainPassword() {
             return plain_password;
         }
-};
+        void setEncryptedPassword (string ep){
+            encrypted_password = ep;
+        }
+        string getEncryptedPassword() {
+            return encrypted_password;
+        }
+        void setEncrypt1(string en1){
+            encrypt1 = en1;
+        }
+        string getEncrypt1(){
+            return encrypt1;
+        }
 
+};
 class Time {
    public:
    time_t now = time(0);
@@ -96,8 +109,7 @@ int main () {
    }
 
     Crypto new_password;
-    new_password.setPassword(new_user.password);
-    
-    return 0;
-    
+    new_password.setPlainPassword(new_user.password);
+    new_password.setEncrypt1(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.password);    
+    return 0; 
 };
