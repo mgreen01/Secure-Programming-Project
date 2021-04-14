@@ -3,16 +3,22 @@
 #include <ctime>
 #include <string.h>
 #include <fstream>
-#include <cctype>
+#include <string>
+#include<bits/stdc++.h>
 using namespace std;
 
 int length = 0;
+
+
 
 class Crypto {
     private:
         string plain_password;
         string encrypted_password;
         string encrypt1;
+        string encrypt2;
+        string encrypt3;
+        string encrypt4;
     public:
         void setPlainPassword(string p){
             plain_password = p;
@@ -31,6 +37,24 @@ class Crypto {
         }
         string getEncrypt1(){
             return encrypt1;
+        }
+        void setEncrypt2(string en2){
+            encrypt2 = en2;
+        }
+        string getEncrypt2(){
+            return encrypt2;
+        }
+        void setEncrypt3 (string en3){
+            encrypt3 = en3;
+        }
+        string getEncrypt3(){
+            return encrypt3;
+        }
+        void setEncrypt4 (string en4){
+            encrypt4 = en4;
+        }
+        string getEncrypt4() {
+            return encrypt4;
         }
 
 };
@@ -63,7 +87,6 @@ class User {
     int account_type;
     string password;
 };
-
 int main () {
     cout << "Please enter a new username: " << endl;
     User new_user;
@@ -109,11 +132,8 @@ int main () {
        curr_time.clock_day = '0' + curr_time.clock_day;
    }
 
-    Crypto new_password;
-    new_password.setPlainPassword(new_user.password);
-    for (int i= 0; new_password.getPlainPassword )
-    new_password.setEncrypt1(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.password);
-    cout << new_password.getEncrypt1() << endl;
+    new_password.setEncrypt4(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.password);
+    cout << new_password.getEncrypt4() << endl;
         
     return 0; 
 };
