@@ -17,8 +17,6 @@ class Crypto {
         string encrypted_password;
         string encrypt1;
         string encrypt2;
-        string encrypt3;
-        string encrypt4;
     public:
         void setPlainPassword(string p){
             plain_password = p;
@@ -44,17 +42,27 @@ class Crypto {
         string getEncrypt2(){
             return encrypt2;
         }
-        void setEncrypt3 (string en3){
-            encrypt3 = en3;
-        }
-        string getEncrypt3(){
-            return encrypt3;
-        }
-        void setEncrypt4 (string en4){
-            encrypt4 = en4;
-        }
-        string getEncrypt4() {
-            return encrypt4;
+        void Encryption1(){
+            string en1;
+            for(int i = 0; i < en1.length(); i++){
+                en1[i] = toupper(en1[i]);
+            }
+
+            int key = 13;
+            string en2 = "";
+
+            for(int i = 0; i < en1.length(); i++){
+                int temp = en1[i] + key;
+                if(en1[i] == 32){
+                    en2 += "";
+                }else if (temp > 90){
+                    temp -= 26;
+                    en2 += (char)temp;
+                } else {
+                    en2 += (char)temp;
+                }
+            }
+             
         }
 
 };
@@ -132,8 +140,13 @@ int main () {
        curr_time.clock_day = '0' + curr_time.clock_day;
    }
 
-    new_password.setEncrypt4(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.password);
-    cout << new_password.getEncrypt4() << endl;
-        
+    Crypto new_password;
+    
+    new_password.setPlainPassword(new_user.password);
+    
+    new_password.setEncrypt1(new_password.getPlainPassword());
+    
+    
+    cout << new_password.getEncrypt2() << endl;
     return 0; 
 };
