@@ -7,6 +7,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+map <char,int> dict1;
+
+map <int,char> dict2;
 int length = 0;
 
 class Time {
@@ -37,13 +40,6 @@ class User {
     int age;
     int account_type;
     string password;
-    cout << "Please enter a new username: " << endl;
-    User new_user;
-    cin >> new_user.username;
-    cout << "Please enter your age: " << endl;
-    cin >> new_user.age;
-    cout << "Please enter a new password: " << endl;
-    cin >> new_user.password;
 };
 class Crypto {
     private:
@@ -76,9 +72,26 @@ class Crypto {
         string getEncrypt2(){
             return encrypt2;
         }
+        void create_dict()
+        {
+            for(int i = 1; i < 27; i++)
+                dict1[char(64 + i)] = i;
+            
+            dict2[0] = 'Z';
+
+            for(int i = 1; i < 26; i++)
+                dict2[i] = char(64 + i);
+
+            return;    
+        }
+ 
+  
 };
 
+    //Crypto new_password;
 
+    //string encrypt(string set)
+//string 
 
 int main () {
     cout << "Please enter a new username: " << endl;
@@ -124,6 +137,10 @@ int main () {
    if (curr_time.day <= 9) {
        curr_time.clock_day = '0' + curr_time.clock_day;
    }
-
+   
+    new_password.setPlainPassword(new_user.password);
+    new_password.setEncrypt1(new_password.getPlainPassword());
+    
+    cout << new_password.getPlainPassword() << endl;
     return 0; 
 };
