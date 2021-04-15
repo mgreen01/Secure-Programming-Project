@@ -1,77 +1,53 @@
 #include <iostream>
+#include<bits/stdc++.h>
 
 using namespace std;
 
-void cipherEncryption(){
-	cout << "Message can only be alphabetic" << endl;
-	string message;
-	cout << "Enter message: ";
-	getline (cin, message);
-	cin.ignore();
+map <char,int> dict1;
 
-	for(int i = 0; i < message.length(); i++){
-		message[i] = toupper(message[i]);
-	}
+map <int,char> dict2;
 
-	int key = 13;
-	string encrypText = "";
+void create_dict()
+{
 
-	for(int i = 0; i < message.length(); i++){
-		int temp = message[i] + key;
-		if(message[i] == 32){
-			encrypText += " ";
-		}else if (temp > 90){
-			temp -= 26;
-			encrypText += (char)temp;
-		} else {
-			encrypText += (char)temp;
-		}//if-else
-	}//for
-	cout << "Encrypted Text: " << encrypText;
+	for(int i = 1; i < 27; i++)
+		dict1[char(64 + i)] = i;
+
+	dict2[0] = 'Z';
+
+	for (int i = 1; i < 26; i++)
+		dict2[i] = char(64 + i);
+
+	return;
 }
 
-void cipherDecryption(){
-	cout << "Message can only be alphabetic" << endl;
-	string message;
-	cout << "Enter message: ";
-	getline (cin, message);
-	cin.ignore();
+string encrypt(string message, int shift)
+{
+	string cipher = "";
+	for(int  i = 0; i < message.size(); i++)
+	{
+		if(message[i] != ' ')
+		{
+			int num = (dict1[message[i]] + shift) % 26;
 
-	for(int i = 0; i < message.length(); i++){
-		message[i] = toupper(message[i]);
+			cipher += dict2[num];
+		}
+		else
+		{
+			cipher += " ";
+		}
 	}
-
-	int key = 13;
-	string decrypText = "";
-
-	for(int i = 0; i < message.length(); i++){
-		int temp = message[i] - key;
-		if(message[i] == 32){
-			decrypText += " ";
-		}else if (temp < 65){
-			temp += 26;
-			decrypText += (char)temp;
-		} else {
-			decrypText += (char)temp;
-		}//if-else
-	}//for
-	cout << "Decrypted Text: " << decrypText;
+	return cipher;
 }
-int main() 
-{ 
-	int choice;
-	cout << "1. Encryption\n2. Decryption\nChoose(1,2): ";
-	cin >> choice;
-	cin.ignore();
 
-	if(choice == 1){
-		cout << endl << "---Encryption---" << endl;
-		cipherEncryption(); 
-	} else if (choice == 2){
-		cout << endl << "---Decryption---" << endl;
-		cipherDecryption();
-	} else {
-		cout << endl << "Wrong Choice" << endl;
+string decrypt(string message, int shift)
+{
+	string decipher = "";
+	for(int i = 0; i < message.size(); i++)
+	{
+		if (message[i] != ' ')
+		{
+			int num = (dict )
+		}
 	}
-	return 0;
 }
