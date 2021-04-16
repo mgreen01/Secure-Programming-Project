@@ -50,7 +50,6 @@ class Crypto {
         string encrypt1;
         string encrypt2;
         string encrypt3;
-        string encrypt4;
     public:
         void setPlainPassword(string p){
             plain_password = p;
@@ -81,12 +80,6 @@ class Crypto {
         }
         string getEncrypt3(){
             return encrypt3;
-        }
-        void setEncrypt4(string en4){
-            encrypt4 = en4;
-        }
-        string getEncrypt4(){
-            return encrypt4;
         }
         void create_dict()
         {
@@ -215,17 +208,19 @@ int main () {
 
     cout << "Encrypted Password: "<< new_password.getEncryptedPassword() << endl;
 
+    string res1 = new_password.getEncryptedPassword();
+
+    int len1 = res1.length();
+    int n1=len1-1;
+    for(int i=0;i<(len1/2);i++){
+        swap(res1[i],res1[n1]);
+        n1 = n1-1;
+    }
+
+    cout<<"Decryption Part 1: "<< res1 <<endl;
+
     
 
-
-
-
-
-
-
-
-
-    
 };
 
 
