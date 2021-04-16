@@ -6,9 +6,9 @@
 #include <string>
 #include <bits/stdc++.h>
 using namespace std;
-
+//first cipher lookup table
 map <char,int> dict1;
-
+//second cipher lookup table
 map <int,char> dict2;
 
 //Provides the current based on Unix Time 
@@ -50,6 +50,8 @@ class Crypto {
         string encrypt1;
         string encrypt2;
         string encrypt3;
+        string decryption1;
+        string decryption2;
     public:
         void setPlainPassword(string p){
             plain_password = p;
@@ -80,6 +82,18 @@ class Crypto {
         }
         string getEncrypt3(){
             return encrypt3;
+        }
+        void setDecrypt1(string de1){
+            decryption1 = de1;
+        }
+        string getDecrypt1(){
+            return decryption1;
+        }
+        void setDecrypt2(string de2){
+            decryption2 = de2;
+        }
+        string getDecrypt2(){
+            return decryption2;
         }
         void create_dict()
         {
@@ -137,7 +151,7 @@ class Crypto {
         return passdecip;
     }
 int main () {
-
+    //user input
     new_password.create_dict();
     cout << "Please enter a new username: " << endl;
     User new_user;
@@ -146,7 +160,7 @@ int main () {
     cin >> new_user.age;
     cout << "Please enter a new password: " << endl;
     cin >> new_user.password;
-
+    //Time formatting
     Time curr_time;
 
     curr_time.clock_hour = to_string(curr_time.hour);
@@ -177,7 +191,7 @@ int main () {
    }
 
 
-   
+   //encryption process
     new_password.setPlainPassword(new_user.password);
     new_password.setEncrypt1(new_password.getPlainPassword());
 
@@ -217,9 +231,18 @@ int main () {
         n1 = n1-1;
     }
 
-    cout<<"Decryption Part 1: "<< res1 <<endl;
+    new_password.setDecrypt1(res1.substr(16));
 
-    
+    cout << "Decryption Part 1: " << res1 << endl;
+    cout << "Decryption Part 2: " << new_password.getDecrypt1() << endl;
+
+    new_password.setDecrypt2(encrypt(new_password.getDecrypt1(), shift));
+
+    cout << "Decrypted Password: "<< new_password.getDecrypt2() << endl;
+
+
+
+
 
 };
 
