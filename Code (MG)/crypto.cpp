@@ -107,8 +107,6 @@ class Crypto {
 
             return;    
         }
- 
-  
 };
 
     Crypto new_password;
@@ -204,7 +202,7 @@ int main () {
 
     new_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.age + new_password.getEncrypt2());
 
-    cout << new_password.getEncrypt3()<< endl;
+    cout <<"Encryption Part 3: " << new_password.getEncrypt3() << endl;
 
     string res = new_password.getEncrypt3();
 
