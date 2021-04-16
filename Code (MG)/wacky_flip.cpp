@@ -4,7 +4,7 @@ using namespace std;
 
 int main ()
 {
-    char s[30], temp;
+    string s[30], temp;
     int i, n;
     cout << "Please, enter a string : ";
     gets(s);

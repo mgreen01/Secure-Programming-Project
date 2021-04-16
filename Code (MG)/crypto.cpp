@@ -10,8 +10,8 @@ using namespace std;
 map <char,int> dict1;
 
 map <int,char> dict2;
-int length = 0;
 
+//Provides the current based on Unix Time 
 class Time {
    public:
    time_t now = time(0);
@@ -37,16 +37,20 @@ class Time {
 class User {
     public:
     string username;
-    int age;
-    int account_type;
+    string age;
+    string account_type;
     string password;
 };
+
+//contains the necessary variables and the functions for the cryptography process
 class Crypto {
     private:
         string plain_password;
         string encrypted_password;
         string encrypt1;
         string encrypt2;
+        string encrypt3;
+        string encrypt4;
     public:
         void setPlainPassword(string p){
             plain_password = p;
@@ -71,6 +75,18 @@ class Crypto {
         }
         string getEncrypt2(){
             return encrypt2;
+        }
+        void setEncrypt3(string en3) {
+            encrypt3 = en3;
+        }
+        string getEncrypt3(){
+            return encrypt3;
+        }
+        void setEncrypt4(string en4){
+            encrypt4 = en4;
+        }
+        string getEncrypt4(){
+            return encrypt4;
         }
         void create_dict()
         {
@@ -138,13 +154,6 @@ int main () {
     cout << "Please enter a new password: " << endl;
     cin >> new_user.password;
 
-    for (int i= 0; new_user.password[i] !='\0'; i++) {
-        length++;
-    }
-    
-    
-    cout << length << endl;
-
     Time curr_time;
 
     curr_time.clock_hour = to_string(curr_time.hour);
@@ -173,6 +182,8 @@ int main () {
    if (curr_time.day <= 9) {
        curr_time.clock_day = '0' + curr_time.clock_day;
    }
+
+
    
     new_password.setPlainPassword(new_user.password);
     new_password.setEncrypt1(new_password.getPlainPassword());
@@ -182,7 +193,36 @@ int main () {
 
     new_password.setEncrypt2(encrypt(message, shift));
 
-    cout << new_password.getEncrypt2()<< "\n";
+    cout << new_password.getEncrypt2()<< endl;
+
+    new_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.age + new_password.getEncrypt2());
+
+    cout << new_password.getEncrypt3()<< endl;
+
+    string res = new_password.getEncrypt3();
+
+    int len = new_password.getEncrypt3().length();
+
+    int n=len-1;
+    for(int i=0;i<(len/2);i++){
+        swap(res[i],res[n]);
+        n = n-1;
+    }
+
+    cout << res << endl;
+
+    new_password.setEncryptedPassword(res);
+
+    cout << "Encrypted Password: "<< new_password.getEncryptedPassword() << endl;
+
+    
+
+
+
+
+
+
+
 
 
     
