@@ -4,7 +4,7 @@
 #include <string.h>
 #include <fstream>
 #include <string>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 map <char,int> dict1;
@@ -88,12 +88,48 @@ class Crypto {
   
 };
 
-    //Crypto new_password;
+    Crypto new_password;
 
-    //string encrypt(string set)
-//string 
+    string encrypt(string message, int shift)
+    {
+        string passcip = "";
+        for(int i = 0; i < message.size(); i++)
+        {
+            if(message[i] != ' ')
+            {
+                int num = (dict1[message[i]] + shift) % 26;
 
+                passcip += dict2[num];
+            }
+            else
+            {
+                passcip += " ";
+            }
+        }
+        return passcip;
+    }
+
+    string decrypt(string message, int shift)
+    {
+        string passdecip = "";
+        for(int i = 0; i < message.size(); i++)
+        {
+            if(message[i] != ' ')
+            {
+                int num =(dict1[message[i]] - shift + 26) % 26;
+
+                passdecip += dict2[num];
+            }
+            else
+            {
+                passdecip += " ";
+            }
+        }
+        return passdecip;
+    }
 int main () {
+
+    new_password.create_dict();
     cout << "Please enter a new username: " << endl;
     User new_user;
     cin >> new_user.username;
@@ -140,7 +176,16 @@ int main () {
    
     new_password.setPlainPassword(new_user.password);
     new_password.setEncrypt1(new_password.getPlainPassword());
+
+    string message = new_password.getEncrypt1();
+    int shift = 13;
+
+    new_password.setEncrypt2(encrypt(message, shift));
+
+    cout << new_password.getEncrypt2()<< "\n";
+
+
     
-    cout << new_password.getPlainPassword() << endl;
-    return 0; 
 };
+
+
