@@ -35,12 +35,18 @@ class Time {
 };
 //This class provides information about the user's username, password, account type()
 class User {
-    public:
-    string username;
-    string age;
-    string account_type;
     private:
-    string password;
+        string password;
+    public:
+        string username;
+        string age;
+        string account_type;
+        void setuserpassword(string userpass){
+            password = userpass;
+        }
+        string getuserpassword(){
+            return password;
+    }
 };
 
 class Student {
@@ -68,14 +74,14 @@ class Student {
 };
 
 class Lecturer {
+    private:
+        string lecturer_username;
+        string lecturer_password;
     public:
         int lecturer_ID;
         string lecturer_name;
         string lecturer_modules;
         void moduleAnnouncement();
-    private:
-        string lecturer_username;
-        string lecturer_password;
 };
 
 class Admin {
@@ -150,5 +156,16 @@ class Crypto {
         }
 };
 int main () {
-    //hellish
+    int user_input;
+    cout << "1. Log in or 2. Create Account: " << endl;
+    cin >> user_input;
+    while (user_input > 2) {
+        cout << "Please pick 1 or 2: " << endl;
+        cin >> user_input;
+    }
+    if (user_input = 1){
+        User existing_user;
+        cout << ""
+    }
+    
 }
