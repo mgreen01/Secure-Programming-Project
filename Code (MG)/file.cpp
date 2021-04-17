@@ -5,7 +5,7 @@
 #include <string>
 #include <bits/stdc++.h>
 using namespace std;
-
+ifstream database;
 class File {
     private:
         string userdatabase;
@@ -31,9 +31,14 @@ class File {
         string getuserdatabase () {
             return userdatabase;
         }
-}
+        
+};
 
 int main () {
+    File student; 
+    database.open("studentlogins.txt");
+
+    while 
 
 
 }
