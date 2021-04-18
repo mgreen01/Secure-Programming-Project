@@ -71,6 +71,10 @@ class Student {
         string getstudentpassword(){
             return student_password;
         }
+        void register_student(){
+            string password = setstudentpassword();
+            string username = setstudentusername(); 
+        }
      
 };
 
@@ -169,7 +173,9 @@ int main () {
         User new_account;
         cout << "Type in account type: Student, Admin or Lecturer: " << endl;
         cin >> new_account.account_type;
-        
+        if (new_account.account_type = string 'Student'){
+            Student new_student;
+        } 
 
         
     }
