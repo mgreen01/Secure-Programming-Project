@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <bits/stdc++.h>
+#include <limits>
 using namespace std;
 //first cipher lookup table
 map <char,int> dict1;
@@ -85,9 +86,10 @@ class Lecturer {
 };
 
 class Admin {
-    string admin_username;
-    string admin_password;
-    void systemAnnouncement();
+    private:
+        string admin_username[i] = {"admin"};
+        string admin_password[i] = {"MMMMMMMYMMAMZQN2350053112024081"};
+    
 };
 
 class Crypto {
@@ -164,8 +166,12 @@ int main () {
         cin >> user_input;
     }
     if (user_input = 1){
-        User existing_user;
-        cout << ""
+        User new_account;
+        cout << "Type in account type: Student, Admin or Lecturer: " << endl;
+        cin >> new_account.account_type;
+        
+
+        
     }
     
 }
