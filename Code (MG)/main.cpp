@@ -72,8 +72,8 @@ class Student {
             return student_password;
         }
         void register_student(){
-            string password = setstudentpassword();
-            string username = setstudentusername(); 
+            string password = getstudentpassword();
+            string username = getstudentusername(); 
         }
      
 };
@@ -91,8 +91,8 @@ class Lecturer {
 
 class Admin {
     private:
-        string admin_username[i] = {"admin"};
-        string admin_password[i] = {"MMMMMMMYMMAMZQN2350053112024081"};
+        string admin_username;
+        string admin_password;
     
 };
 
@@ -161,6 +161,28 @@ class Crypto {
             return;    
         }
 };
+
+Crypto new_password;
+
+string encrypt(string message, int shift)
+{
+    string passcip = "";
+    for(int i = 0; i < message.size(); i++)
+    {
+        if(message[i] != ' ')
+        {
+            int num = (dict1[message[i]] + shift) % 26;
+
+            passcip += dict2[num];
+        }
+        else
+        {
+            passcip += " ";
+        }
+    }
+    return passcip;
+}
+
 int main () {
     int user_input;
     cout << "1. Log in or 2. Create Account: " << endl;
@@ -170,14 +192,83 @@ int main () {
         cin >> user_input;
     }
     if (user_input = 1){
+        new_password.create_dict();
         User new_account;
+        string stu_type = "Student";
+        string admin_type = "Admin";
+        string Lecturer_type = "Lecturer";
+        string password_confirmation;
+        string password_input;
         cout << "Type in account type: Student, Admin or Lecturer: " << endl;
         cin >> new_account.account_type;
-        if (new_account.account_type = string 'Student'){
+        if (new_account.account_type == stu_type){
             Student new_student;
+            cout << "Please enter a new username: " << endl;
+            cin >> new_account.username;
+            cout << "Please enter a new password: " << endl;
+            cin >> password_input;
+            new_student.setstudentpassword(password_input);
+            cout << "Please confirm your password:"  << endl;
+            cin >> password_confirmation;
+            while (password_confirmation != new_student.getstudentpassword()){
+                cout << "Please try again: " << endl;
+                cin >> password_input;
+                new_student.setstudentpassword(password_input);
+                cout << "Please confirm your password:"  << endl;
+                cin >> password_confirmation;
+            }
         } 
 
-        
-    }
-    
+    new_password.setPlainPassword(password_input);
+    new_password.setEncrypt1(new_password.getPlainPassword());
+
+    string message = new_password.getEncrypt1();
+    int shift = 13;
+
+    new_password.setEncrypt2(encrypt(message, shift));
+
+    cout << new_password.getEncrypt2() << endl;
+
+    Time curr_time;
+
+    curr_time.clock_hour = to_string(curr_time.hour);
+    curr_time.clock_min = to_string(curr_time.min);
+    curr_time.clock_sec = to_string(curr_time.sec);
+    curr_time.clock_month = to_string(curr_time.month);
+    curr_time.clock_year = to_string(curr_time.year);
+    curr_time.clock_day = to_string (curr_time.day);
+
+   if (curr_time.hour <= 9) {
+      curr_time.clock_hour = '0' + curr_time.clock_hour;
+   }
+
+   if (curr_time.min <= 9) {
+      curr_time.clock_min = '0' + curr_time.clock_min;
+   }
+
+   if (curr_time.sec <= 9) {
+      curr_time.clock_sec = '0' + curr_time.clock_sec;
+   }
+
+   if (curr_time.month <= 9) {
+       curr_time.clock_month = '0' + curr_time.clock_month;
+   }
+
+   if (curr_time.day <= 9) {
+       curr_time.clock_day = '0' + curr_time.clock_day;
+   }
+
+   new_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_password.setEncrypt2());
+
+   string res1 = new_password.getEncrypt3();
+
+   int len1 = res1.length();
+   int n1=len1-1;
+   for(int i=0;i<(len1/2);i++){
+       swap(res1[i],res1[n1]);
+       n1 = n1-1;
+   }
+   
+   }
+
 }
