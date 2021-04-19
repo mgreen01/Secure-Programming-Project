@@ -305,9 +305,10 @@ int main () {
             cout << "Admin Menu:" << endl;
             cout << "1. Make a system announcement: " << endl;
             cout << "Please enter the announcement: " << endl;
-            cin >> rootuser.admininput;
+            cin.ignore() >> rootuser.admininput;
+            rootuser.admininput;
             rootuser.adminannou1.open("adminannouncement.txt");
-            rootuser.adminannou1 << rootuser.admininput << "\n"<< endl;
+            rootuser.adminannou1 << rootuser.admininput << endl;
             rootuser.adminannou1.close();
             return 0;
         }
