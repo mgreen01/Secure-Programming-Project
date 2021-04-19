@@ -116,10 +116,12 @@ class Admin {
         ofstream adminannou1;
         ifstream adminannou;
         string admininput;
-        void setSystemAnnouncement(){
+        void SystemAnnouncement(){
             cout << "Please enter the announcement: " << endl;
             cin >> admininput;
-            adminannou1.open("")
+            adminannou1.open("adminannouncement.txt");
+            adminannou1 << admininput << endl;
+            adminannou1.close();
         }
 };
 
@@ -302,7 +304,9 @@ int main () {
 
         if (existing_password.getEncryptedPassword() == adminpassword && existing_user.username == adminuser){
             cout << "Admin Menu:" << endl;
-            cout << "1. Make an "
+            cout << "1. Make a system announcement: " << endl;
+            cin >> existing_user.SystemAnnouncement();
+            return 0;
         }
 
     }
@@ -325,7 +329,7 @@ int main () {
                 cin >> password_input;
                 new_student.setstudentpassword(password_input);
                 cout << "Please confirm your password:"  << endl;
-                cin >> password_confirmation;
+                cin >> set
             }
 
         } 
