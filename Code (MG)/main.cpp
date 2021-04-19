@@ -306,11 +306,13 @@ int main () {
             cout << "1. Make a system announcement: " << endl;
             cout << "Please enter the announcement: " << endl;
             cin.ignore() >> rootuser.admininput;
-            rootuser.admininput;
-            rootuser.adminannou1.open("adminannouncement.txt");
-            rootuser.adminannou1 << rootuser.admininput << endl;
-            rootuser.adminannou1.close();
-            return 0;
+            if (cin >> rootuser.admininput && cin.ignore(numeric_limits<streamsize>::max(), '\n'))
+            {
+                rootuser.admininput;
+                rootuser.adminannou1.open("adminannouncement.txt");
+                rootuser.adminannou1 << rootuser.admininput << endl;
+                rootuser.adminannou1.close();
+            }
         }
 
     }
