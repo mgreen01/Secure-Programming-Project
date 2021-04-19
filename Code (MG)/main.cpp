@@ -116,13 +116,6 @@ class Admin {
         ofstream adminannou1;
         ifstream adminannou;
         string admininput;
-        void SystemAnnouncement(){
-            cout << "Please enter the announcement: " << endl;
-            cin >> admininput;
-            adminannou1.open("adminannouncement.txt");
-            adminannou1 << admininput << endl;
-            adminannou1.close();
-        }
 };
 
 class Crypto {
@@ -273,7 +266,8 @@ int main () {
         cout << "Please pick 1 or 2: " << endl;
         cin >> user_input;
     }
-    if (user_input = 1) {
+
+    if (user_input == 1) {
         User existing_user;
         Crypto existing_password;
         cout << "Please enter your username: " << endl;
@@ -288,7 +282,7 @@ int main () {
 
         existing_password.setEncrypt2(encrypt(message, shift));
 
-        existing_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + adminage + existing_password.getEncrypt2());
+        existing_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + adminage + existing_password.getEncrypt2());
 
         string res = existing_password.getEncrypt3();
 
@@ -302,15 +296,24 @@ int main () {
 
         existing_password.setEncryptedPassword(res);
 
-        if (existing_password.getEncryptedPassword() == adminpassword && existing_user.username == adminuser){
+        string encryptinput = existing_password.getEncryptedPassword(); 
+
+        cout << encryptinput << endl;
+
+        if (encryptinput == adminpassword && existing_user.username == adminuser){
+            Admin rootuser;
             cout << "Admin Menu:" << endl;
             cout << "1. Make a system announcement: " << endl;
-            cin >> existing_user.SystemAnnouncement();
+            cout << "Please enter the announcement: " << endl;
+            cin >> rootuser.admininput;
+            rootuser.adminannou1.open("adminannouncement.txt");
+            rootuser.adminannou1 << rootuser.admininput << "\n"<< endl;
+            rootuser.adminannou1.close();
             return 0;
         }
 
     }
-    if (user_input = 2) {
+    if (user_input == 2) {
         User new_account;
         cout << "Type in account type: Student or Lecturer: " << endl;
         cin >> new_account.account_type;
@@ -329,7 +332,7 @@ int main () {
                 cin >> password_input;
                 new_student.setstudentpassword(password_input);
                 cout << "Please confirm your password:"  << endl;
-                cin >> set
+                cin >> password_confirmation;
             }
 
         } 

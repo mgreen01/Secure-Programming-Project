@@ -200,7 +200,7 @@ int main () {
 
     cout << new_password.getEncrypt2()<< endl;
 
-    new_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_user.age + new_password.getEncrypt2());
+    new_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + new_user.age + new_password.getEncrypt2());
 
     cout <<"Encryption Part 3: " << new_password.getEncrypt3() << endl;
 
