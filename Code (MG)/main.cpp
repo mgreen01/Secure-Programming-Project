@@ -310,13 +310,14 @@ int main () {
             cout << "1. Make a system announcement: " << endl;
             cin >> adminmenu;
             if (adminmenu == 1){
+                rootuser.adminannou1.open("RE.txt");
                 char admininfo[MAX_ADMIN_LEN];
                 cout << "Enter the announcement (Press enter then press '*' on your keyboard) " << endl;
                 cin.getline(admininfo, MAX_ADMIN_LEN, '*');
-                
-                
+                rootuser.adminannou1 << admininfo << endl;
+                rootuser.adminannou1.close();
+                return 0;
             }
-
             
         }
 
