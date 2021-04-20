@@ -6,6 +6,7 @@
 #include <string>
 #include <bits/stdc++.h>
 #include <limits>
+#include <stdio.h>
 using namespace std;
 //first cipher lookup table
 map <char,int> dict1;
@@ -93,6 +94,7 @@ class Admin {
         string admin_username;
         string admin_age;
         string admin_password;
+        string admininput;
     public:
         void setadminusername (string adminuser){
             admin_username = adminuser;
@@ -112,10 +114,15 @@ class Admin {
         string getadminpassword(){
             return admin_password;
         }
+        void setadmininput(string adinput){
+            admininput = adinput;
+        }
+        string getadmininput(){
+            return admininput;
+        }
         ifstream adminlogin;
         ofstream adminannou1;
         ifstream adminannou;
-        string admininput;
 };
 
 class Crypto {
@@ -219,6 +226,7 @@ int main () {
     string adminage;
     string adminpassword;
     Time curr_time;
+    #define MAX_ADMIN_LEN 255
 
     curr_time.clock_hour = to_string(curr_time.hour);
     curr_time.clock_min = to_string(curr_time.min);
@@ -255,10 +263,6 @@ int main () {
     syslogin.adminlogin >> adminpassword;
 
     syslogin.adminlogin.close();
-
-    cout << adminuser << endl;
-
-    cout << adminpassword << endl;
 
     cout << "1. Log in or 2. Create Account: " << endl;
     cin >> user_input;
@@ -298,21 +302,22 @@ int main () {
 
         string encryptinput = existing_password.getEncryptedPassword(); 
 
-        cout << encryptinput << endl;
 
         if (encryptinput == adminpassword && existing_user.username == adminuser){
             Admin rootuser;
+            int adminmenu;
             cout << "Admin Menu:" << endl;
             cout << "1. Make a system announcement: " << endl;
-            cout << "Please enter the announcement: " << endl;
-            cin.ignore() >> rootuser.admininput;
-            if (cin >> rootuser.admininput && cin.ignore(numeric_limits<streamsize>::max(), '\n'))
-            {
-                rootuser.admininput;
-                rootuser.adminannou1.open("adminannouncement.txt");
-                rootuser.adminannou1 << rootuser.admininput << endl;
-                rootuser.adminannou1.close();
+            cin >> adminmenu;
+            if (adminmenu == 1){
+                char admininfo[MAX_ADMIN_LEN];
+                cout << "Enter the announcement (Press enter then press '*' on your keyboard) " << endl;
+                cin.getline(admininfo, MAX_ADMIN_LEN, '*');
+                
+                
             }
+
+            
         }
 
     }
