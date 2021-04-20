@@ -214,6 +214,8 @@ string encrypt(string message, int shift)
 
 int main () {
     Admin syslogin;
+    Student stulogin;
+    Lecturer lecturlogin;
     new_password.create_dict();
     int user_input;
     int length;
@@ -264,122 +266,94 @@ int main () {
 
     syslogin.adminlogin.close();
 
-    cout << "1. Log in or 2. Create Account: " << endl;
-    cin >> user_input;
-    while (user_input > 2) {
-        cout << "Please pick 1 or 2: " << endl;
-        cin >> user_input;
+    User existing_user;
+    Crypto existing_password;
+    cout << "Please enter your username: " << endl;
+    cin >> existing_user.username;
+    cout << "Please enter your password: " << endl;
+    cin >> password_input;
+    existing_password.setPlainPassword(password_input);
+    existing_password.setEncrypt1(existing_password.getPlainPassword());
+
+    string message = existing_password.getEncrypt1();
+    int shift = 13;
+
+    existing_password.setEncrypt2(encrypt(message, shift));
+
+    existing_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + adminage + existing_password.getEncrypt2());
+
+    string res = existing_password.getEncrypt3();
+
+    int len = existing_password.getEncrypt3().length();
+
+    int n=len-1;
+    for(int i=0;i<(len/2);i++){
+        swap(res[i],res[n]);
+        n = n-1;
     }
 
-    if (user_input == 1) {
-        User existing_user;
-        Crypto existing_password;
-        cout << "Please enter your username: " << endl;
-        cin >> existing_user.username;
-        cout << "Please enter your password: " << endl;
-        cin >> password_input;
-        existing_password.setPlainPassword(password_input);
-        existing_password.setEncrypt1(existing_password.getPlainPassword());
+    existing_password.setEncryptedPassword(res);
 
-        string message = existing_password.getEncrypt1();
-        int shift = 13;
-
-        existing_password.setEncrypt2(encrypt(message, shift));
-
-        existing_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + adminage + existing_password.getEncrypt2());
-
-        string res = existing_password.getEncrypt3();
-
-        int len = existing_password.getEncrypt3().length();
-
-        int n=len-1;
-        for(int i=0;i<(len/2);i++){
-            swap(res[i],res[n]);
-            n = n-1;
-        }
-
-        existing_password.setEncryptedPassword(res);
-
-        string encryptinput = existing_password.getEncryptedPassword(); 
+    string encryptinput = existing_password.getEncryptedPassword(); 
 
 
-        if (encryptinput == adminpassword && existing_user.username == adminuser){
-            Admin rootuser;
-            int adminmenu;
-            cout << "Admin Menu:" << endl;
-            cout << "1. Make a system announcement: " << endl;
-            cin >> adminmenu;
-            if (adminmenu == 1){
-                rootuser.adminannou1.open("RE.txt");
-                char admininfo[MAX_ADMIN_LEN];
-                cout << "Enter the announcement (Press enter then press '*' on your keyboard) " << endl;
-                cin.getline(admininfo, MAX_ADMIN_LEN, '*');
-                rootuser.adminannou1 << admininfo << endl;
-                rootuser.adminannou1.close();
-                return 0;
-            }
-            
-        }
 
-    }
-    if (user_input == 2) {
-        User new_account;
-        cout << "Type in account type: Student or Lecturer: " << endl;
-        cin >> new_account.account_type;
-        if (new_account.account_type == stu_type){
-            Student new_student;
-            cout << "Please enter a new username: " << endl;
-            cin >> new_account.username;
-            cout << "Please enter a new password: " << endl;
-            cin >> password_input;
-            new_student.setstudentpassword(password_input);
-            cout << "Please confirm your password:"  << endl;
-            cin >> password_confirmation;
-            
-            while (password_confirmation != new_student.getstudentpassword()){
-                cout << "Please try again: " << endl;
+        
+    //admin menu/interface
+    if (encryptinput == adminpassword && existing_user.username == adminuser){
+      Admin rootuser;
+      int adminmenu;
+      //admin system menu 
+      cout << "Admin Menu:" << endl;
+      cout << "1. Make a system announcement: " << endl;
+      cout << "2. Add an account" << endl;
+      cin >> adminmenu;
+      if (adminmenu == 1){
+          rootuser.adminannou1.open("RE.txt");
+          char admininfo[MAX_ADMIN_LEN];
+          cout << "Enter the announcement (Press enter then press '*' on your keyboard) " << endl;
+          cin.getline(admininfo, MAX_ADMIN_LEN, '*');
+          rootuser.adminannou1 << admininfo << endl;
+          rootuser.adminannou1.close();
+          return 0;
+       }
+       if (adminmenu == 2) {
+           User new_account;
+            cout << "Type in account type: Student or Lecturer: " << endl;
+            cin >> new_account.account_type;
+            if (new_account.account_type == stu_type){
+                Student new_student;
+                cout << "Please enter a new username: " << endl;
+                cin >> new_account.username;
+                cout << "Please enter a new password: " << endl;
                 cin >> password_input;
                 new_student.setstudentpassword(password_input);
                 cout << "Please confirm your password:"  << endl;
                 cin >> password_confirmation;
-            }
+                while (password_confirmation != new_student.getstudentpassword()){
+                    cout << "Please try again: " << endl;
+                    cin >> password_input;
+                    new_student.setstudentpassword(password_input);
+                    cout << "Please confirm your password:"  << endl;
+                    cin >> password_confirmation;
+                }
+                new_password.setPlainPassword(password_input);
+                new_password.setEncrypt1(new_password.getPlainPassword());
 
-        } 
-        if (new_account.account_type == stu_type){
-            Student new_student;
-            cout << "Please enter a new username: " << endl;
-            cin >> new_account.username;
-            cout << "Please enter a new password: " << endl;
-            cin >> password_input;
-            new_student.setstudentpassword(password_input);
-            cout << "Please confirm your password:"  << endl;
-            cin >> password_confirmation;
-            while (password_confirmation != new_student.getstudentpassword()){
-                cout << "Please try again: " << endl;
-                cin >> password_input;
-                new_student.setstudentpassword(password_input);
-                cout << "Please confirm your password:"  << endl;
-                cin >> password_confirmation;
+                string message = new_password.getEncrypt1();
+                int shift = 13;
+                
+                new_password.setEncrypt2(encrypt(message, shift));
+                new_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_password.getEncrypt2());
+                string res1 = new_password.getEncrypt3();
+                int len1 = res1.length();
+                int n1=len1-1;
+                for(int i=0;i<(len1/2);i++){
+                    swap(res1[i],res1[n1]);
+                    n1 = n1-1;
+                }
             }
-            new_password.setPlainPassword(password_input);
-            new_password.setEncrypt1(new_password.getPlainPassword());
-
-            string message = new_password.getEncrypt1();
-            int shift = 13;
-
-            new_password.setEncrypt2(encrypt(message, shift));
-            new_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_password.getEncrypt2());
-            
-            string res1 = new_password.getEncrypt3();
-            
-            int len1 = res1.length();
-            int n1=len1-1;
-            for(int i=0;i<(len1/2);i++){
-                swap(res1[i],res1[n1]);
-                n1 = n1-1;
-            }
-        }
+       }
     }
-
 };
 
