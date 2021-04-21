@@ -16,15 +16,15 @@ int main () {
 
     inputFile.open(user_name2);
 
-    if (inputFile){
-        inputFile >> user_type;
-        inputFile >> user_age;
-        inputFile >> user_password;
+    if (inputFile.is_open()){
+        while (getline(inputFile, user_name))
+        {
+            cout << user_name << "\n";
+        }
         inputFile.close();
-        cout << user_type << endl;
-        cout << user_age << endl;
-        cout << user_password << endl;
     }
+
+
 
     
 

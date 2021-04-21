@@ -71,10 +71,10 @@ class Student {
         string getstudentpassword(){
             return student_password;
         }
-        void register_student(){
-            string password = getstudentpassword();
-            string username = getstudentusername(); 
-        }
+        //void register_student(){
+        //    string password = getstudentpassword();
+        //    string username = getstudentusername(); 
+        //}
      
 };
 
@@ -86,7 +86,21 @@ class Lecturer {
         int lecturer_ID;
         string lecturer_name;
         string lecturer_modules;
-        void moduleAnnouncement();
+        string modannounce;
+        ofstream lecturerannou1;
+        ifstream lecturerannou;
+    void setlecturerusername(string lecuser){
+        lecturer_username = lecuser;
+    }
+    string getlecturerusername() {
+        return lecturer_username;
+    }
+    void setlecturerpassword(string lecpassword){
+        lecturer_password = lecpassword;
+    }
+    string getlecturerpassword(){
+        return lecturer_password;
+    }
 };
 
 class Admin {
@@ -124,7 +138,7 @@ class Admin {
         ofstream adminannou1;
         ifstream adminannou;
 };
-
+//class for working out values within the encryption algorithm
 class Crypto {
     private:
         string plain_password;
@@ -205,9 +219,6 @@ int main () {
     new_password.create_dict();
     int user_input;
     int length;
-    string stu_type = "Student";
-    string admin_type = "Admin";
-    string Lecturer_type = "Lecturer";
     string password_confirmation;
     string password_input;
     string adminuser;
@@ -216,25 +227,12 @@ int main () {
     string password_file;
     Time curr_time;
     #define MAX_ADMIN_LEN 255
+    #define MAX_LECTURER_LEN 255
 
-    curr_time.clock_hour = to_string(curr_time.hour);
-    curr_time.clock_min = to_string(curr_time.min);
-    curr_time.clock_sec = to_string(curr_time.sec);
+    //Time Format
     curr_time.clock_month = to_string(curr_time.month);
     curr_time.clock_year = to_string(curr_time.year);
     curr_time.clock_day = to_string (curr_time.day);
-
-   if (curr_time.hour <= 9) {
-      curr_time.clock_hour = '0' + curr_time.clock_hour;
-   }
-
-   if (curr_time.min <= 9) {
-      curr_time.clock_min = '0' + curr_time.clock_min;
-   }
-
-   if (curr_time.sec <= 9) {
-      curr_time.clock_sec = '0' + curr_time.clock_sec;
-   }
 
    if (curr_time.month <= 9) {
        curr_time.clock_month = '0' + curr_time.clock_month;
@@ -282,37 +280,175 @@ int main () {
 
     string encryptinput = existing_password.getEncryptedPassword(); 
 
-    cout << encryptinput << endl;
-
+    //Student Menu
     if (encryptinput == password_file && existing_user.account_type == 1){
+        Admin studentuser;
+        Lecturer studentview;
+        string studentadminannou;
+        string Lecturernameannou;
+        int stumenu;
         cout << "Welcome " << existing_user.username << endl;
-        cout << "Student Menu "
-        cin >> 
+        //Admin Announcement Display
+        studentuser.adminannou.open("RE.txt");
+        if(studentuser.adminannou.is_open()){
+            cout << "Admin announcment: " << endl;
+            while (getline(studentuser.adminannou,studentadminannou))
+            {
+                cout << studentadminannou << endl;
+            }
+        }
+        studentuser.adminannou.close();
+        //Module Annoucement Display
+        studentview.lecturerannou.open("LecturerAnnouncment.txt");
+        if (studentview.lecturerannou.is_open()){
+            cout << "Lecturer announcment: " << endl;
+            while (getline(studentview.lecturerannou, Lecturernameannou))
+            {
+                cout << Lecturernameannou << endl;
+            }
+        }
+        studentview.lecturerannou.close();
+        //Main Student Menu
+        cout << "Student Menu: " << endl;
+        cout << "1. View Grades" << endl;
+        cout << "2. Extra Activites" << endl;
+        cout << "3. Employment Opportunities" << endl;
+        cout << "4. Logout" << endl;
+        cin >> stumenu;
+        //Grades Menu
+        while (stumenu == 1){
+            cout << "No grades available yet. Keep your eyes peeled" << endl;
+            cout << "Student Menu: " << endl;
+            cout << "1. View Grades" << endl;
+            cout << "2. Extra Activites" << endl;
+            cout << "3. Employment Opportunities" << endl;
+            cout << "4. Logout" << endl;
+            cin >> stumenu;
+        }
+        //Extra Activites Menu
+        while (stumenu == 2){
+            cout << "2021 Summer CTF Teams" << endl;
+            cout << "Maths Club" << endl;
+            cout << "USW Rugby Team" << endl;
+            cout << "1. View Grades" << endl;
+            cout << "2. Extra Activites" << endl;
+            cout << "3. Employment Opportunities" << endl;
+            cout << "4. Logout" << endl;
+            cin >> stumenu;
+        }
+        //Employment Opportunities Menu
+        while (stumenu == 3){
+            cout << "Dragon Security: Paid Internship 2021/2022" << endl;
+            cout << "Welsh Government: Graduate Security Engineer" << endl;
+            cout << "Cyber-Not-Aware: Security Researcher " << endl;
+            cout << "1. View Grades" << endl;
+            cout << "2. Extra Activites" << endl;
+            cout << "3. Employment Opportunities" << endl;
+            cout << "4. Logout" << endl;
+            cin >> stumenu;
+        }
+        //User Logout
+        if (stumenu == 4){
+            return 0;
+        }
+    }
+    //Lecturer System Interface
+    if(encryptinput == password_file && existing_user.account_type == 2){
+        int lecchoice;
+        Admin LecturerUser;
+        string lectureradminannou;
+        string lecturername;
+        Lecturer lecinfo;
+        cout << "Welcome " << existing_user.username << endl;
+        LecturerUser.adminannou.open("RE.txt");
+        if(LecturerUser.adminannou.is_open()){
+            cout << "Admin announcment: " << endl;
+            while (getline(LecturerUser.adminannou,lectureradminannou))
+            {
+                cout << lectureradminannou << endl;
+            }
+        }
+        LecturerUser.adminannou.close();
+        //Lecturer Main Menu
+        cout << "Lecturer Menu: " << endl;
+        cout << "1. Set Assignments" << endl;
+        cout << "2. Submit Markings" << endl;
+        cout << "3. Set Module Announcements" << endl;
+        cout << "4. Logout" << endl;
+        cin >> lecchoice; 
+        //Lecturer Set Assignments Menu
+        while (lecchoice == 1){
+            cout << "You cannot Set Assignments Yet" << endl;
+            cout << "Lecturer Menu: " << endl;
+            cout << "1. Set Assignments" << endl;
+            cout << "2. Submit Markings" << endl;
+            cout << "3. Set Module Announcments" << endl;
+            cout << "4. Logout" << endl;
+            cin >> lecchoice; 
+        }
+        //Marking Submission Menu
+        while (lecchoice == 2) {
+            cout << "You cannot submit markings since there are no Assignments Set" << endl;
+            cout << "Lecturer Menu: " << endl;
+            cout << "1. Set Assignments" << endl;
+            cout << "2. Submit Markings" << endl;
+            cout << "3. Set Module Announcments" << endl;
+            cout << "4. Logout" << endl;
+            cin >> lecchoice;
+        }
+
+        //Module Announcement Menu
+        if (lecchoice == 3) {
+          lecinfo.lecturerannou1.open("LecturerAnnouncment.txt");
+          char lec[MAX_LECTURER_LEN];
+          cout << "Enter the announcement (Press '*' on your keyboard): " << endl;
+          lecinfo.lecturerannou1 << existing_user.username << endl; 
+          cin.getline(lec, MAX_LECTURER_LEN, '*');
+          lecinfo.lecturerannou1 << lec << endl;
+          lecinfo.lecturerannou1.close();
+          cout << "Lecturer Menu: " << endl;
+          cout << "1. Set Assignments" << endl;
+          cout << "2. Submit Markings" << endl;
+          cout << "3. Set Module Announcments" << endl;
+          cout << "4. Logout" << endl;
+          cin >> lecchoice;
+        }
+
+        //System Logout
+        if (lecchoice == 4){
+            return 0;
+        }
+
+
+
     }
 
     //admin menu/interface
     if (encryptinput == password_file && existing_user.account_type == 3){
       Admin rootuser;
       int adminmenu;
-      //admin system menu 
+      //Admin system menu 
       cout << "Admin Menu:" << endl;
       cout << "1. Make a system announcement: " << endl;
       cout << "2. Add an account" << endl;
       cin >> adminmenu;
+      //System Announcement Menu
       if (adminmenu == 1){
           rootuser.adminannou1.open("RE.txt");
           char admininfo[MAX_ADMIN_LEN];
-          cout << "Enter the announcement (Press '*' on your keyboard) " << endl;
+          cout << "Enter the announcement (Press '*' on your keyboard): " << endl;
           cin.getline(admininfo, MAX_ADMIN_LEN, '*');
           rootuser.adminannou1 << admininfo << endl;
           rootuser.adminannou1.close();
           return 0;
        }
+       //Account Creation Menu
        if (adminmenu == 2) {
             User new_account;
             ofstream outputFile;
             cout << "Select account type: 1. Student or 2. Lecturer: " << endl;
             cin >> new_account.account_type;
+            //Student Account Creation Menu
             if (new_account.account_type == 1){
                 Student new_student;
                 cout << "Please enter a new username: " << endl;
@@ -323,6 +459,7 @@ int main () {
                 cin >> password_input;
                 new_student.setstudentpassword(password_input);
                 cout << "Please confirm the new password:"  << endl;
+                //Student Password Confirmation
                 cin >> password_confirmation;
                 while (password_confirmation != new_student.getstudentpassword()){
                     cout << "Please try again: " << endl;
@@ -331,6 +468,7 @@ int main () {
                     cout << "Please confirm the new password:"  << endl;
                     cin >> password_confirmation;
                 }
+                //Student Password Encryption Algorithm
                 new_password.setPlainPassword(password_input);
                 new_password.setEncrypt1(new_password.getPlainPassword());
 
@@ -338,21 +476,75 @@ int main () {
                 int shift = 13;
                 
                 new_password.setEncrypt2(encrypt(message, shift));
-                new_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + new_student.age + new_password.getEncrypt2());
+                new_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + new_account.age + new_password.getEncrypt2());
                 string res1 = new_password.getEncrypt3();
                 int len1 = res1.length();
                 int n1=len1-1;
                 for(int i=0;i<(len1/2);i++){
                     swap(res1[i],res1[n1]);
                     n1 = n1-1;
-            
                 }
+                new_password.setEncryptedPassword(res1);
 
+                string encryptpass = new_password.getEncryptedPassword();
+                
+                string new_username = new_account.username + ".txt";
+
+                outputFile.open(new_username);
+                outputFile << new_account.account_type << endl;
+                outputFile << new_account.age << endl;
+                outputFile << encryptpass << endl;
+                outputFile.close();
             }
-            string new_username = new_account + ".txt";
+            if (new_account.account_type == 2) {
+                //Lecturer Account Creation Menu
+                Lecturer new_lecturer;
+                cout << "Enter the Lecturer's Username: " << endl;
+                cin >> new_account.username;
+                cout << "Please enter the lecturer's age" << endl;
+                cin >> new_account.age;
+                cout << "Please enter a new password: " << endl;
+                cin >> password_input;
+                cout << "Please confirm the new password: " << endl;
+                cin >> password_confirmation;
+                new_lecturer.setlecturerpassword(password_confirmation);
+                while(password_confirmation != new_lecturer.getlecturerpassword()){
+                    cout << "Please try again: " << endl;
+                    cin >> password_input;
+                    cout << "Please confirm the new password: " << endl;
+                    cin >> password_confirmation;
+                }
+                //Lecturer Password Encryption
+                new_password.setPlainPassword(password_confirmation);
+                new_password.setEncrypt1(new_password.getPlainPassword());
+
+                string message = new_password.getEncrypt1();
+                int shift = 13;
+
+                new_password.setEncrypt2(encrypt(message,shift));
+                new_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + new_account.age + new_password.getEncrypt2());
+                
+                string res1 = new_password.getEncrypt3();
+                int len1 = res1.length();
+                int n1=len1-1;
+                for(int i=0;i<(len1/2);i++){
+                    swap(res1[i],res1[n1]);
+                    n1 = n1-1;
+                }
+                new_password.setEncryptedPassword(res1);
+
+                string encryptpass = new_password.getEncryptedPassword();
+                
+                string new_username = new_account.username + ".txt";
+
+                //Lecturer Login Info output
+                outputFile.open(new_username);
+                outputFile << new_account.account_type << endl;
+                outputFile << new_account.age << endl;
+                outputFile << encryptpass << endl;
+                outputFile.close();
+            }    
        }
     }
-
-
 };
 
