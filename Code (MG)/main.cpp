@@ -42,7 +42,7 @@ class User {
     public:
         string username;
         string age;
-        string account_type;
+        int account_type;
         void setuserpassword(string userpass){
             password = userpass;
         }
@@ -56,8 +56,8 @@ class Student {
         string student_username;
         string student_password;
    public:
-        int student_ID;
         string student_name;
+        string age;
         string student_course;
         void setstudentusername(string stuuser){
             student_username = stuuser;
@@ -132,8 +132,6 @@ class Crypto {
         string encrypt1;
         string encrypt2;
         string encrypt3;
-        string decryption1;
-        string decryption2;
     public:
         void setPlainPassword(string p){
             plain_password = p;
@@ -164,18 +162,6 @@ class Crypto {
         }
         string getEncrypt3() {
             return encrypt3;
-        }
-        void setDecrypt1(string de1) {
-            decryption1 = de1;
-        }
-        string getDecrypt1() {
-            return decryption1;
-        }
-        void setDecrypt2(string de2) {
-            decryption2 = de2;
-        }
-        string getDecrypt2() {
-            return decryption2;
         }
         void create_dict()
         {
@@ -227,6 +213,7 @@ int main () {
     string adminuser;
     string adminage;
     string adminpassword;
+    string password_file;
     Time curr_time;
     #define MAX_ADMIN_LEN 255
 
@@ -256,15 +243,6 @@ int main () {
    if (curr_time.day <= 9) {
        curr_time.clock_day = '0' + curr_time.clock_day;
    }
-    syslogin.adminlogin.open("admin.txt");
-
-    syslogin.adminlogin >> adminuser;
-
-    syslogin.adminlogin >> adminage;
-
-    syslogin.adminlogin >> adminpassword;
-
-    syslogin.adminlogin.close();
 
     User existing_user;
     Crypto existing_password;
@@ -275,12 +253,20 @@ int main () {
     existing_password.setPlainPassword(password_input);
     existing_password.setEncrypt1(existing_password.getPlainPassword());
 
+    ifstream user_file;
+    string user_name2 = existing_user.username + ".txt";
+    user_file.open(user_name2);
+    user_file >> existing_user.account_type;
+    user_file >> existing_user.age;
+    user_file >> password_file;
+    user_file.close();
+
     string message = existing_password.getEncrypt1();
     int shift = 13;
 
     existing_password.setEncrypt2(encrypt(message, shift));
 
-    existing_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + adminage + existing_password.getEncrypt2());
+    existing_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + existing_user.age + existing_password.getEncrypt2());
 
     string res = existing_password.getEncrypt3();
 
@@ -296,11 +282,10 @@ int main () {
 
     string encryptinput = existing_password.getEncryptedPassword(); 
 
+    cout << encryptinput << endl;
 
-
-        
     //admin menu/interface
-    if (encryptinput == adminpassword && existing_user.username == adminuser){
+    if (encryptinput == password_file && existing_user.account_type == 3){
       Admin rootuser;
       int adminmenu;
       //admin system menu 
@@ -311,7 +296,7 @@ int main () {
       if (adminmenu == 1){
           rootuser.adminannou1.open("RE.txt");
           char admininfo[MAX_ADMIN_LEN];
-          cout << "Enter the announcement (Press enter then press '*' on your keyboard) " << endl;
+          cout << "Enter the announcement (Press '*' on your keyboard) " << endl;
           cin.getline(admininfo, MAX_ADMIN_LEN, '*');
           rootuser.adminannou1 << admininfo << endl;
           rootuser.adminannou1.close();
@@ -319,22 +304,24 @@ int main () {
        }
        if (adminmenu == 2) {
            User new_account;
-            cout << "Type in account type: Student or Lecturer: " << endl;
+            cout << "Select account type: 1. Student or 2. Lecturer: " << endl;
             cin >> new_account.account_type;
-            if (new_account.account_type == stu_type){
+            if (new_account.account_type == 1){
                 Student new_student;
                 cout << "Please enter a new username: " << endl;
                 cin >> new_account.username;
+                cout << "Please enter the Student's Age: " << endl;
+                cin >> new_account.age;
                 cout << "Please enter a new password: " << endl;
                 cin >> password_input;
                 new_student.setstudentpassword(password_input);
-                cout << "Please confirm your password:"  << endl;
+                cout << "Please confirm the new password:"  << endl;
                 cin >> password_confirmation;
                 while (password_confirmation != new_student.getstudentpassword()){
                     cout << "Please try again: " << endl;
                     cin >> password_input;
                     new_student.setstudentpassword(password_input);
-                    cout << "Please confirm your password:"  << endl;
+                    cout << "Please confirm the new password:"  << endl;
                     cin >> password_confirmation;
                 }
                 new_password.setPlainPassword(password_input);
@@ -344,16 +331,19 @@ int main () {
                 int shift = 13;
                 
                 new_password.setEncrypt2(encrypt(message, shift));
-                new_password.setEncrypt3(curr_time.clock_day + curr_time.clock_month + curr_time.clock_year + curr_time.clock_hour + curr_time.clock_min + curr_time.clock_sec + new_password.getEncrypt2());
+                new_password.setEncrypt3(curr_time.clock_month + curr_time.clock_year + new_student.age + new_password.getEncrypt2());
                 string res1 = new_password.getEncrypt3();
                 int len1 = res1.length();
                 int n1=len1-1;
                 for(int i=0;i<(len1/2);i++){
                     swap(res1[i],res1[n1]);
                     n1 = n1-1;
+            
                 }
             }
        }
     }
+
+
 };
 

@@ -1,0 +1,28 @@
+  else {
+        string existing_username = existing_user.username + ".txt";
+        string database_password;
+        ifstream LoginFile;
+        LoginFile.open(existing_username);
+        if (LoginFile){
+            LoginFile >> existing_user.account_type;
+            LoginFile >> database_password;
+            LoginFile.close();
+        }
+        if (existing_user.account_type == stu_type && encryptinput == database_password) {
+            int stu_user_choice;
+            ifstream student_admin_announcement;
+            string admin_announcement;
+            student_admin_announcement.open("RE.txt");
+            student_admin_announcement >> admin_announcement;
+            student_admin_announcement.close();
+            cout << "Welcome " << existing_user.username << endl;
+            cout << "Admin Announcement: " << admin_announcement <<endl;
+            cout << "1. View Grades" << endl;
+            cout << "2. View Module Announcements" << endl;
+            cout << "3. Exit" << endl;
+            cin >> stu_user_cehoice;
+            if (stu_user_choice == 3){
+                return 0;
+            }
+        }
+    }
