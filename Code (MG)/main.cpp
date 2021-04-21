@@ -284,6 +284,12 @@ int main () {
 
     cout << encryptinput << endl;
 
+    if (encryptinput == password_file && existing_user.account_type == 1){
+        cout << "Welcome " << existing_user.username << endl;
+        cout << "Student Menu "
+        cin >> 
+    }
+
     //admin menu/interface
     if (encryptinput == password_file && existing_user.account_type == 3){
       Admin rootuser;
@@ -303,7 +309,8 @@ int main () {
           return 0;
        }
        if (adminmenu == 2) {
-           User new_account;
+            User new_account;
+            ofstream outputFile;
             cout << "Select account type: 1. Student or 2. Lecturer: " << endl;
             cin >> new_account.account_type;
             if (new_account.account_type == 1){
@@ -340,7 +347,9 @@ int main () {
                     n1 = n1-1;
             
                 }
+
             }
+            string new_username = new_account + ".txt";
        }
     }
 
