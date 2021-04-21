@@ -1,20 +1,20 @@
-<mxfile host="app.diagrams.net" modified="2021-04-21T18:31:31.273Z" agent="5.0 (Windows)" etag="Hfp_1Rm064b_PtX5XAka" version="14.5.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-21T18:42:14.095Z" agent="5.0 (Windows)" etag="e_nfZspXNlf80zO5thJj" version="14.5.8" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
     <mxGraphModel dx="824" dy="1992" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="F2aWLSE53vhr_MozMiDo-12" value="Crypto" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="80" y="800" width="230" height="260" as="geometry" />
+          <mxGeometry x="310" y="780" width="230" height="300" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-12" vertex="1">
           <mxGeometry y="26" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="5oYpnNbD0ZBPzVLrT35g-5" value="plain_password: string&#xa;encrypted_password: string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-12" vertex="1">
+        <mxCell id="5oYpnNbD0ZBPzVLrT35g-5" value="-plain_password: string&#xa;-encrypted_password: string&#xa;-encrypt1: string&#xa;-encrypt2: string&#xa;-encrypt3: string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-12" vertex="1">
           <mxGeometry y="34" width="230" height="102" as="geometry" />
         </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-16" value="+getPassword(): string&#xa;+setCryptoPass: string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-12" vertex="1">
-          <mxGeometry y="136" width="230" height="124" as="geometry" />
+        <mxCell id="F2aWLSE53vhr_MozMiDo-16" value="+setPlainPassword(): void&#xa;+getPlainPassword(): string&#xa;+setEncryptedPassword(): void&#xa;+getEncryptedPassword(): string&#xa;+setEncrypt1(): void&#xa;+getEncrypt1(): string&#xa;+setEncrypt2(): void&#xa;+getEncrypt2(): string&#xa;+setEncrypt3(): void&#xa;+getEncrypt3(): string&#xa;-create_dict:(): void&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-12" vertex="1">
+          <mxGeometry y="136" width="230" height="164" as="geometry" />
         </mxCell>
         <mxCell id="5oYpnNbD0ZBPzVLrT35g-2" value="" style="endArrow=none;html=1;exitX=0.009;exitY=-0.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.004;entryY=-0.024;entryDx=0;entryDy=0;entryPerimeter=0;" parent="F2aWLSE53vhr_MozMiDo-12" source="F2aWLSE53vhr_MozMiDo-16" target="F2aWLSE53vhr_MozMiDo-16" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -53,19 +53,16 @@
           <mxGeometry y="138" width="230" height="124" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-28" value="Admin" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="30" y="430" width="250" height="290" as="geometry" />
+          <mxGeometry x="30" y="430" width="250" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="556p25ZOdv9HoD6KK5eJ-18" value="public:&#xa;-ifstream: adminlogin&#xa;-ofstream: adminannou1&#xa;-ifstream: adminannou&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="F2aWLSE53vhr_MozMiDo-28">
+          <mxGeometry y="26" width="250" height="146" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-29" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-28" vertex="1">
-          <mxGeometry y="26" width="250" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-30" value="&#xa;admin_username: stringadmin_age: string&#xa;admin_password: string&#xa;admininput: string&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-28" vertex="1">
-          <mxGeometry y="34" width="250" height="102" as="geometry" />
+          <mxGeometry y="172" width="250" height="8" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-28" vertex="1">
-          <mxGeometry y="136" width="250" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-32" value="+setadminusername: void&#xa;+getadminusername: string&#xa;+setadminage: void&#xa;+getadminage: string&#xa;+setadminpassword: void&#xa;+getadminpassword: string&#xa;+setadmininput: void&#xa;+getadmininput: string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-28" vertex="1">
-          <mxGeometry y="144" width="250" height="146" as="geometry" />
+          <mxGeometry y="180" width="250" height="8" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-33" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="F2aWLSE53vhr_MozMiDo-23" target="556p25ZOdv9HoD6KK5eJ-17" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
