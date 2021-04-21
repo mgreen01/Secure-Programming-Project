@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-21T18:52:47.595Z" agent="5.0 (Windows)" etag="WBwfM4Q5ytLdCSd47h77" version="14.5.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-21T18:53:16.799Z" agent="5.0 (Windows)" etag="QIUwIYnkT7RAr9E3S4WN" version="14.5.8" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
     <mxGraphModel dx="825" dy="1992" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -23,19 +23,19 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-17" value="Student" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="720" y="436" width="230" height="268" as="geometry" />
+          <mxGeometry x="720" y="436" width="230" height="272" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-17" vertex="1">
           <mxGeometry y="26" width="230" height="8" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-19" value="private:&#xa;student_username: string&#xa;student_password: string&#xa;public:&#xa;string student_name&#xa;string age&#xa;string student_course&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-17" vertex="1">
-          <mxGeometry y="34" width="230" height="102" as="geometry" />
+          <mxGeometry y="34" width="230" height="106" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-17" vertex="1">
-          <mxGeometry y="136" width="230" height="8" as="geometry" />
+          <mxGeometry y="140" width="230" height="8" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-21" value="+setstudentusername(): void&#xa;+getstudentusername(): string&#xa;+setstudentpassword(): void&#xa;+getstudentassword(): string&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-17" vertex="1">
-          <mxGeometry y="144" width="230" height="124" as="geometry" />
+          <mxGeometry y="148" width="230" height="124" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-23" value="Lecturer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="350" y="430" width="230" height="262" as="geometry" />
