@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-21T17:50:12.533Z" agent="5.0 (Windows)" etag="u2pqK03Y1NwSNbRWezYj" version="14.5.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-21T17:58:43.018Z" agent="5.0 (Windows)" etag="Tgi2LYzZ2o1NFe7pTyIq" version="14.5.8" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
     <mxGraphModel dx="700" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -88,7 +88,7 @@
         <mxCell id="F2aWLSE53vhr_MozMiDo-35" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
           <mxGeometry y="26" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-36" value="-Time: string&#xa;&#xa;-hour: int-minute: int&#xa;-second: int&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
+        <mxCell id="F2aWLSE53vhr_MozMiDo-36" value="-time(0): time_t now&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
           <mxGeometry y="34" width="230" height="102" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
