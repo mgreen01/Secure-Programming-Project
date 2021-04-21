@@ -1,4 +1,6 @@
-//This is a blank file
+//Created by: Morgan Green
+//Date Created: 06th April 2021 20:04:29
+//Date Modified: 21st April 2021 18:47:27
 #include <iostream>
 #include <ctime>
 #include <string.h>
@@ -20,17 +22,11 @@ class Time {
 
    tm *ltm = localtime(&now);
    
-   int hour = ltm->tm_hour;
-   int min = ltm->tm_min;
-   int sec = ltm->tm_sec;
    int year = 1900 + ltm-> tm_year;
    int month = 1 + ltm->tm_mon;
    int day = ltm->tm_mday;
    
    
-   string clock_hour;
-   string clock_min;
-   string clock_sec;
    string clock_month;
    string clock_year;
    string clock_day;
@@ -81,21 +77,10 @@ class Student {
 
 class Lecturer {
     private:
-        string lecturer_username;
         string lecturer_password;
     public:
-        int lecturer_ID;
-        string lecturer_name;
-        string lecturer_modules;
-        string modannounce;
         ofstream lecturerannou1;
         ifstream lecturerannou;
-    void setlecturerusername(string lecuser){
-        lecturer_username = lecuser;
-    }
-    string getlecturerusername() {
-        return lecturer_username;
-    }
     void setlecturerpassword(string lecpassword){
         lecturer_password = lecpassword;
     }
@@ -105,36 +90,7 @@ class Lecturer {
 };
 
 class Admin {
-    private:
-        string admin_username;
-        string admin_age;
-        string admin_password;
-        string admininput;
     public:
-        void setadminusername (string adminuser){
-            admin_username = adminuser;
-        }
-        string getadminusername(){
-            return admin_username;
-        }
-        void setadminage (string adminage){
-            admin_age = adminage;
-        }
-        string getadminage(){
-            return admin_age;
-        }
-        void setadminpassword (string adminpass){
-            admin_password = adminpass; 
-        }
-        string getadminpassword(){
-            return admin_password;
-        }
-        void setadmininput(string adinput){
-            admininput = adinput;
-        }
-        string getadmininput(){
-            return admininput;
-        }
         ifstream adminlogin;
         ofstream adminannou1;
         ifstream adminannou;
