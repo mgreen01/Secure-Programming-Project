@@ -48,7 +48,8 @@ class User {
         }
         string getuserpassword(){
             return password;
-    }
+        }
+        ifstream Dupcheck;
 };
 
 class Student {
@@ -193,6 +194,7 @@ class Crypto {
 
 Crypto new_password;
 
+//String encryption function
 string encrypt(string message, int shift)
 {
     string passcip = "";
@@ -446,6 +448,7 @@ int main () {
        if (adminmenu == 2) {
             User new_account;
             ofstream outputFile;
+
             cout << "Select account type: 1. Student or 2. Lecturer: " << endl;
             cin >> new_account.account_type;
             //Student Account Creation Menu
@@ -453,6 +456,7 @@ int main () {
                 Student new_student;
                 cout << "Please enter a new username: " << endl;
                 cin >> new_account.username;
+                
                 cout << "Please enter the Student's Age: " << endl;
                 cin >> new_account.age;
                 cout << "Please enter a new password: " << endl;
@@ -486,6 +490,7 @@ int main () {
                 }
                 new_password.setEncryptedPassword(res1);
 
+                //Student Login Info Output
                 string encryptpass = new_password.getEncryptedPassword();
                 
                 string new_username = new_account.username + ".txt";
@@ -507,6 +512,7 @@ int main () {
                 cin >> password_input;
                 cout << "Please confirm the new password: " << endl;
                 cin >> password_confirmation;
+                //Lecturer Password Confirmation
                 new_lecturer.setlecturerpassword(password_confirmation);
                 while(password_confirmation != new_lecturer.getlecturerpassword()){
                     cout << "Please try again: " << endl;
@@ -533,11 +539,11 @@ int main () {
                 }
                 new_password.setEncryptedPassword(res1);
 
+                //Lecturer Login Info output
                 string encryptpass = new_password.getEncryptedPassword();
                 
                 string new_username = new_account.username + ".txt";
 
-                //Lecturer Login Info output
                 outputFile.open(new_username);
                 outputFile << new_account.account_type << endl;
                 outputFile << new_account.age << endl;
