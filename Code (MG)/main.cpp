@@ -448,7 +448,7 @@ int main () {
        if (adminmenu == 2) {
             User new_account;
             ofstream outputFile;
-
+            string UserDupcheck;
             cout << "Select account type: 1. Student or 2. Lecturer: " << endl;
             cin >> new_account.account_type;
             //Student Account Creation Menu
@@ -456,7 +456,13 @@ int main () {
                 Student new_student;
                 cout << "Please enter a new username: " << endl;
                 cin >> new_account.username;
-                
+                string UserDupcheck = new_account.username + ".txt";
+                new_account.Dupcheck.open(UserDupcheck);
+                if (new_account.Dupcheck.is_open()){
+                    new_account.Dupcheck.close();
+                    cout << "Username Already Exists, Please enter a new username: " << endl;
+                    cin >> new_account.username;
+                }
                 cout << "Please enter the Student's Age: " << endl;
                 cin >> new_account.age;
                 cout << "Please enter a new password: " << endl;
@@ -506,6 +512,14 @@ int main () {
                 Lecturer new_lecturer;
                 cout << "Enter the Lecturer's Username: " << endl;
                 cin >> new_account.username;
+                string UserDupcheck = new_account.username + ".txt";
+                //Lecturer Username Duplicate Checker
+                new_account.Dupcheck.open(UserDupcheck);
+                if (new_account.Dupcheck.is_open()){
+                    new_account.Dupcheck.close();
+                    cout << "Username Already Exists, Please enter a new username: " << endl;
+                    cin >> new_account.username;
+                }
                 cout << "Please enter the lecturer's age" << endl;
                 cin >> new_account.age;
                 cout << "Please enter a new password: " << endl;
