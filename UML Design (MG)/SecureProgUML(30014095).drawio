@@ -1,18 +1,9 @@
-<mxfile host="app.diagrams.net" modified="2021-04-21T18:18:34.596Z" agent="5.0 (Windows)" etag="IFfMsqET6fUyEvs4ONu_" version="14.5.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-21T18:22:16.380Z" agent="5.0 (Windows)" etag="0BrnyXRG8lOxx7XQZ55s" version="14.5.8" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
-    <mxGraphModel dx="824" dy="896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="824" dy="892" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="F2aWLSE53vhr_MozMiDo-5" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="350" y="50" width="230" height="158" as="geometry" />
-        </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-6" value="public:&#xa;- username: string-age: int&#xa;-account_type:int&#xa;-password:string&#xa;-Dupcheck: ifstream&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-5" vertex="1">
-          <mxGeometry y="26" width="230" height="124" as="geometry" />
-        </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-5" vertex="1">
-          <mxGeometry y="150" width="230" height="8" as="geometry" />
-        </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-12" value="Crypto" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="80" y="800" width="230" height="260" as="geometry" />
         </mxCell>
@@ -76,10 +67,10 @@
         <mxCell id="F2aWLSE53vhr_MozMiDo-32" value="- systemAnnouncement(): void&#xa;+setPassword:&#xa;+getPassword:&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-28" vertex="1">
           <mxGeometry y="144" width="230" height="124" as="geometry" />
         </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-33" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.509;entryY=0.875;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="F2aWLSE53vhr_MozMiDo-23" target="F2aWLSE53vhr_MozMiDo-7" edge="1">
+        <mxCell id="F2aWLSE53vhr_MozMiDo-33" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.509;entryY=0.875;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="F2aWLSE53vhr_MozMiDo-23" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="460" y="400" as="sourcePoint" />
-            <mxPoint x="465" y="310" as="targetPoint" />
+            <mxPoint x="467.06999999999994" y="207" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-34" value="Time" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
@@ -140,19 +131,19 @@
           <mxGeometry x="1320" y="470" width="220" height="30" as="geometry" />
         </mxCell>
         <mxCell id="556p25ZOdv9HoD6KK5eJ-13" value="Lecturer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="80" y="30" width="230" height="262" as="geometry" />
+          <mxGeometry x="80" y="30" width="230" height="282" as="geometry" />
         </mxCell>
         <mxCell id="556p25ZOdv9HoD6KK5eJ-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="556p25ZOdv9HoD6KK5eJ-13">
           <mxGeometry y="26" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="556p25ZOdv9HoD6KK5eJ-15" value="public:&#xa;-username&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="556p25ZOdv9HoD6KK5eJ-13">
-          <mxGeometry y="34" width="230" height="96" as="geometry" />
+        <mxCell id="556p25ZOdv9HoD6KK5eJ-15" value="private:&#xa;-password: string&#xa;public:&#xa;-username: string&#xa;-age: string&#xa;-account_type: int&#xa;-Dupcheck: ifstream&#xa; &#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="556p25ZOdv9HoD6KK5eJ-13">
+          <mxGeometry y="34" width="230" height="116" as="geometry" />
         </mxCell>
         <mxCell id="556p25ZOdv9HoD6KK5eJ-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="556p25ZOdv9HoD6KK5eJ-13">
-          <mxGeometry y="130" width="230" height="8" as="geometry" />
+          <mxGeometry y="150" width="230" height="8" as="geometry" />
         </mxCell>
         <mxCell id="556p25ZOdv9HoD6KK5eJ-17" value="+setuserpassword(): void&#xa;&#xa;+getuserpassword():string&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="556p25ZOdv9HoD6KK5eJ-13">
-          <mxGeometry y="138" width="230" height="124" as="geometry" />
+          <mxGeometry y="158" width="230" height="124" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
