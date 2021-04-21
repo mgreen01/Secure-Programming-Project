@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-21T18:05:12.213Z" agent="5.0 (Windows)" etag="zJMBzxCUj666EhRdqBwO" version="14.5.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-21T18:13:06.156Z" agent="5.0 (Windows)" etag="hn3xngvlDA0s9-uthv8i" version="14.5.8" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
     <mxGraphModel dx="700" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -83,19 +83,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-34" value="Time" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="1150" y="740" width="230" height="268" as="geometry" />
+          <mxGeometry x="1150" y="740" width="230" height="144" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-35" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
           <mxGeometry y="26" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-36" value="-time(0): time_t now&#xa;-localtime(&amp;now): tm *ltm&#xa;-ltm-&gt;tm_hour&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
+        <mxCell id="F2aWLSE53vhr_MozMiDo-36" value="-time(0): time_t now&#xa;-localtime(&amp;now): tm *ltm&#xa;-year = 1900 + ltm-&gt; tm_year:int&#xa;-month = 1 + ltm-&gt; tm_mday:int&#xa; &#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
           <mxGeometry y="34" width="230" height="102" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
           <mxGeometry y="136" width="230" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-38" value="+ Time()&#xa;+ getTime(): string&#xa;+ getHour(): int&#xa;+ getMinute(): int&#xa;+ getSecond(): int&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-34" vertex="1">
-          <mxGeometry y="144" width="230" height="124" as="geometry" />
         </mxCell>
         <mxCell id="NznP9gh7rejOoxTO0ly_-1" value="" style="endArrow=none;html=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -138,6 +135,9 @@
         </mxCell>
         <mxCell id="Fk85s3XBoEgGGTR6DrIB-8" value="setUsername():void&#xa;getUsername():string&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fk85s3XBoEgGGTR6DrIB-3" vertex="1">
           <mxGeometry y="136" width="230" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="556p25ZOdv9HoD6KK5eJ-1" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &amp;quot;consolas&amp;quot;, &amp;quot;courier new&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe&quot;&gt;hour&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4&quot;&gt;&amp;nbsp;=&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe&quot;&gt;ltm&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe&quot;&gt;tm_hour&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="470" width="220" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
