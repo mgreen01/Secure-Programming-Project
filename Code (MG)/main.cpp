@@ -1,6 +1,7 @@
 //Created by: Morgan Green
 //Date Created: 06th April 2021 20:04:29
-//Date Modified: 21st April 2021 18:47:27
+//Date Modified: 22nd April 2021 08:27:10
+//Sources looked at for program: (Gaddis, 2015) and (Messier and Viega, 2003)
 #include <iostream>
 #include <ctime>
 #include <string.h>
@@ -33,7 +34,6 @@ class Time {
 };
 //This class provides information about the user's username, password, account type()
 class User {
-    private:
         string password;
     public:
         string username;
@@ -48,6 +48,7 @@ class User {
         ifstream Dupcheck;
 };
 
+//Transfers Student information such as Username and Password through other parts of the program   
 class Student {
     private:
         string student_username;
@@ -67,14 +68,9 @@ class Student {
         }
         string getstudentpassword(){
             return student_password;
-        }
-        //void register_student(){
-        //    string password = getstudentpassword();
-        //    string username = getstudentusername(); 
-        //}
-     
+        }    
 };
-
+//Transfers Lecturer information such as Username, Password and Announcments through other parts of the program 
 class Lecturer {
     private:
         string lecturer_password;
@@ -88,7 +84,7 @@ class Lecturer {
         return lecturer_password;
     }
 };
-
+//Transfers Admin information such as Username, Password and Announcments through other parts of the program 
 class Admin {
     public:
         ifstream adminlogin;
@@ -199,7 +195,7 @@ int main () {
    if (curr_time.day <= 9) {
        curr_time.clock_day = '0' + curr_time.clock_day;
    }
-
+    //User Login Screen
     User existing_user;
     Crypto existing_password;
     cout << "Please enter your username: " << endl;
@@ -208,14 +204,16 @@ int main () {
     cin >> password_input;
     existing_password.setPlainPassword(password_input);
     existing_password.setEncrypt1(existing_password.getPlainPassword());
-
+    //Login Info Receiver
     ifstream user_file;
     string user_name2 = existing_user.username + ".txt";
     user_file.open(user_name2);
-    user_file >> existing_user.account_type;
-    user_file >> existing_user.age;
-    user_file >> password_file;
-    user_file.close();
+    if(user_file.is_open()){
+        user_file >> existing_user.account_type;
+        user_file >> existing_user.age;
+        user_file >> password_file;
+        user_file.close();
+    }
 
     string message = existing_password.getEncrypt1();
     int shift = 13;
