@@ -84,7 +84,7 @@ class Lecturer {
         return lecturer_password;
     }
 };
-//Transfers Admin information such as Username, Password and Announcments through other parts of the program 
+//Transfers Admin information such as Announcments and login creation through other parts of the program 
 class Admin {
     public:
         ifstream adminlogin;
@@ -215,6 +215,7 @@ int main () {
         user_file.close();
     }
 
+    //Password Input Encryption
     string message = existing_password.getEncrypt1();
     int shift = 13;
 
