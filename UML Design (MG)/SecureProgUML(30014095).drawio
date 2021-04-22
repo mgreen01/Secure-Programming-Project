@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-22T08:58:18.244Z" agent="5.0 (Windows)" etag="F9lo5tE5htZFBEW9xUM9" version="14.6.5" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-22T08:59:24.072Z" agent="5.0 (Windows)" etag="7eiQTwD8X6-wvYMDu1te" version="14.6.5" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
     <mxGraphModel dx="2512" dy="1863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -43,7 +43,7 @@
         <mxCell id="F2aWLSE53vhr_MozMiDo-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-23" vertex="1">
           <mxGeometry y="26" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="F2aWLSE53vhr_MozMiDo-25" value="private:&#xa;lecturer_password: string&#xa;public:&#xa;&#xa;lecturerannou1: ofstreamlecturerannou: ifstream&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-23" vertex="1">
+        <mxCell id="F2aWLSE53vhr_MozMiDo-25" value="private:&#xa;lecturer_password: string&#xa;public:&#xa;lecturerannou1: ofstream&#xa;lecturerannou: ifstream&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-23" vertex="1">
           <mxGeometry y="34" width="230" height="96" as="geometry" />
         </mxCell>
         <mxCell id="F2aWLSE53vhr_MozMiDo-26" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="F2aWLSE53vhr_MozMiDo-23" vertex="1">
