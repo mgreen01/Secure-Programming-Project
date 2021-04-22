@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-04-22T09:02:42.916Z" agent="5.0 (Windows)" etag="SsOLGiRTp43ECS78-CVb" version="14.6.5" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-22T17:02:59.887Z" agent="5.0 (Windows)" etag="QDUL7P6CAoJhfa5S1o1y" version="14.6.6" type="github">
   <diagram id="B1ylj1akvkJgGZb7Wtry" name="Page-1">
-    <mxGraphModel dx="2512" dy="1863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1791" dy="1855" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -130,7 +130,7 @@
         <mxCell id="556p25ZOdv9HoD6KK5eJ-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="556p25ZOdv9HoD6KK5eJ-22" vertex="1">
           <mxGeometry y="26" width="700" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="556p25ZOdv9HoD6KK5eJ-27" value="&#xa;-password_confirmation: string&#xa;-password_input: string&#xa;-adminuser: string&#xa;-adminage: string&#xa;-adminpassword: stringser&#xa;-user_file: ifstream&#xa;-user_name2: string&#xa;-message: string&#xa;-shift: int&#xa;-res: string&#xa;-len: int&#xa;-n: int&#xa;-encryptinput: string&#xa;-studentuser: string&#xa;-studentview: Lecturer&#xa;-stumenu: int&#xa;-lecchoice: int&#xa;-LecturerUser: Admin&#xa;-lectureradminannou: string&#xa;-lecturername: string&#xa;-lecinfo: Lecturer&#xa;-rootuser: Admin&#xa;-adminmenu: int&#xa;-new_account: User&#xa;-outputfile: ofstream&#xa;-UserDupcheck: string&#xa;-encryptpass: string&#xa;-new_username: string&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="556p25ZOdv9HoD6KK5eJ-22" vertex="1">
+        <mxCell id="556p25ZOdv9HoD6KK5eJ-27" value="&#xa;-password_confirmation: string&#xa;-password_input: string&#xa;-adminuser: string&#xa;-adminage: string&#xa;-adminpassword: string&#xa;-user_file: ifstream&#xa;-user_name2: string&#xa;-message: string&#xa;-shift: int&#xa;-res: string&#xa;-len: int&#xa;-n: int&#xa;-encryptinput: string&#xa;-studentuser: string&#xa;-studentview: Lecturer&#xa;-stumenu: int&#xa;-lecchoice: int&#xa;-LecturerUser: Admin&#xa;-lectureradminannou: string&#xa;-lecturername: string&#xa;-lecinfo: Lecturer&#xa;-rootuser: Admin&#xa;-adminmenu: int&#xa;-new_account: User&#xa;-outputfile: ofstream&#xa;-UserDupcheck: string&#xa;-encryptpass: string&#xa;-new_username: string&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="556p25ZOdv9HoD6KK5eJ-22" vertex="1">
           <mxGeometry y="34" width="700" height="446" as="geometry" />
         </mxCell>
         <mxCell id="556p25ZOdv9HoD6KK5eJ-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="556p25ZOdv9HoD6KK5eJ-22" vertex="1">
